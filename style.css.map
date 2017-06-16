@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA,qBAAqB;EACnB,UAAU,EAAE,UAAU;;ACDxB,oBAAoB;EAClB,UAAU,EAAE,UAAU;EACtB,2CAAsB;IACpB,OAAO,EAAE,IAAI;IACb,cAAc,EAAE,GAAG;IACnB,eAAe,EAAE,MAAM;IACvB,MAAM,EAAE,KAAK;IACb,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,SAAS;IACjB,UAAU,EAAE,IAAI;IAChB,uDAAW;MACT,MAAM,EAAE,GAAG;MACX,KAAK,EAAE,GAAG;MACV,MAAM,EAAE,SAAS;MACjB,gBAAgB,EAAE,GAAG;;ACZ3B,IAAI;EACF,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI",
+"sources": ["sass/_startgame.scss","sass/_gameboard.scss","sass/main.scss"],
 "names": [],
 "file": "style.css"
 }

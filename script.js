@@ -170,9 +170,9 @@ $(document).ready(function($) {
       }
     },
     gameBoardCreator: function(){
-      // but first:
-        // If the Contestants Array = 0, ask user to enter at least one contestant to play (or disable "add" or "submit" button)
         console.log("gameBoardCreator!");
+        
+
     },
 
       // ======== Contestant Constructor ========

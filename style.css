@@ -1,3 +1,24 @@
+#start-game-container {
+  box-sizing: border-box; }
 
+#gameboard-container {
+  box-sizing: border-box; }
+  #gameboard-container #contestants-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    margin: 10px auto;
+    background: gray; }
+    #gameboard-container #contestants-container .contestant {
+      height: 90%;
+      width: 30%;
+      margin: 15px auto;
+      background-color: red; }
+
+body {
+  box-sizing: border-box;
+  padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */
