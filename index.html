@@ -10,13 +10,34 @@
   <body>
 
     <!-- HEADER DIV -->
+    <div id="header">
       <!-- LOGO -->
+      <div id="logo">
+        <p>Wheel of Luck</p>
+      </div>
       <!-- NEW GAME -->
+      <button id="newgame-btn">New Game</button>
+    </div>
+
 
     <!-- START GAME CONTAINER (hides after submit)-->
+    <div id="start-game-container">
       <!-- WELCOME -->
+      <h1>Welcome!</h1>
+      <!-- RULES DESCRIPTION, if you're playing alone try to achieve 10 -->
+      <div id="rules-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
       <!-- ADD CONTESTANTS FORM -->
+      <form id="name-input-form">
+        <input id="name-input" type="text" name="" value="" placeholder="Enter Name">
+      </form>
+      <button id="contestant-add-btn" type="button" name="button">Add Player</button>
+
       <!-- START GAME BUTTON -->
+      <button id="start-game-btn" type="button" name="button">Start Game</button>
+      <div id="added-contestants"></div>
+    </div>
 
     <!-- GAME BOARD CONTAINER (displays upon start button click)-->
 
@@ -24,13 +45,25 @@
         <!-- CONTESTANT DIV -->
           <!-- CONTESTANT NAME - DYNAMICALLY CREATED -->
           <!-- CONTESTANT POINTS -->
+          <!-- SOLVE BUTTON -->
+
+      <!-- SPIN CONTAINER ????? -->
+        <!-- CIRCLE BUTTON ????? -->
 
       <!-- PHRASE HINT CONTAINER -->
         <!-- PHRASE HINT DISPLAY -->
 
       <!-- PHRASE BOARD CONTAINER: flexbox, wrap, center justify -->
-        <!-- PHEASE LETTER DIV - DYNAMICALLY CREATED -->
+        <!-- PHRASE LETTER DIV - DYNAMICALLY CREATED -->
           <!-- PHRASE LETTER DISPLAY -->
+
+      <!-- GUESSED LETTERS CONTAINER: flexbox, wrap, center justify -->
+        <!-- GUESSED LETTERS DIV - DYNAMICALLY CREATED -->
+          <!-- GUESSED LETTERS DISPLAY -->
+
+      <!-- GAME OVER MODAL -->
+        <!-- TEXT DISPLAY -->
+        <!-- NEW GAME (REFRESH PAGE) -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
