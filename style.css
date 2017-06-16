@@ -6,6 +6,11 @@
   box-sizing: border-box;
   margin: 10px; }
 
+#gameplay-container {
+  box-sizing: border-box;
+  margin: 10px;
+  height: 300px; }
+
 #gameboard-container {
   box-sizing: border-box; }
   #gameboard-container #contestants-container {
@@ -81,17 +86,16 @@
   background-color: green; }
   #guessed-letters-container .guessed-letter-box {
     box-sizing: border-box;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     margin: 10px;
     background-color: gray;
-    text-align: center;
-    border-bottom: 3px solid black; }
+    text-align: center; }
     #guessed-letters-container .guessed-letter-box .guessed-letter {
       margin: 0;
-      line-height: 50px;
+      line-height: 40px;
       color: white;
-      font-size: 30px; }
+      font-size: 20px; }
 
 body {
   box-sizing: border-box;
