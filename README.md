@@ -1,5 +1,3 @@
-<h1></h1>
+Wheel of Luck coding project!
 
-<p>
-  asdTHis sffef
-</p>
+More details to come...

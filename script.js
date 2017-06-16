@@ -1,59 +1,111 @@
 
 // +++++++++++++++ Methods +++++++++++++++
-  // ======== Start Game ========
-
+  // ======== Game Play ========
+    //create a Full Alphabet propterty - Do I need this?
     // create round counter property
-    // create current player object
-    
-    // select first player in player array
-      // display name and
-      // listen for spin wheel click
-        // fires Spin Wheel method
-      //
+    // create Current Player property
+
+// ======== Game Play ========
+    // add contestat at index 0 to Current Player property
+    // round++
+    // Fire Do Turn
+
+// ======== Do Turn ========
+    // Fire Clear method
+    // display name and current round at top of gameplay div
+    // listen for spin wheel click
+      // fires Spin Wheel method
+      // add listener to Buy a Vowel Click
+        // make button live when enabled (add class)
+      // add listener to Consonant Enry Click
+        // make button live when enabled (add class)
+
+    // Listen: Buy a Vowel on click
+    // if buy a vowel is clicked
+      // grab vowel input value, to lowercase
+      // if vowel is in guessed letters array
+        // alert: [X] has aleady been guessed. [Next player in array's turn!]
+        // Fire Next Contestant method
+      // if current player pt value = 0
+        // alert: player cannot buy a vowel
+      //else:
+        // loop through vowel array
+          // match input value
+          // deduct one point from player's total
+        // fire Check Guess Method
+
+    // Listen: Consonant entry on click
+    // If guess consonant is clicked
+      // grab value from consonant input, to lowercase
+      // for loop through consonants array
+        // if input value not in consonants array
+          //  alert user to please enter a consonant
+      // else if consonant is in guessed letters array
+        // alert: [X] has aleady been guessed. [Next player in array's turn!]
+        // Fire Next Contestant method
+      // else
+        // loop through consonant array
+          // match input value ensure a valid entry was provided
 
   // ======== Spin Wheel ========
     // produce random number between 1 and 11
     // grab the object in the Wheel Object Array whose index corresponds to the random number
-    // place value in currentSpinVal array
-    // display currentSpinVal
+    // place value in currentSpinVal
+    // display currentSpinVal in gameplay div
+      // if currentSpinVal = "lose turn"
+        // alert("Result: Lose Turn! Next!")
+        // fire Next Contestant Handler
+      // else if currentSpinVal = "bankrupt"
+        // alert("Result: Bankrupt! Next!")
+        // update points total of current player in contestant array to 0.
+        // fire Next Contestant Handler
+      // else
+        // display currentSpinVal in gameplay div
 
-  // ======== Buy Vowel ========
-    // Ask Contestant if they would like to buy a vowel
-    // Yes: subtract 1 pt from their total points. else: return
+  // ======== Check Guess ========
+    // if the value is in the currently displayed phrase
+      // Fire Handle Success method
+    // if the value is not in the currently displayed phrase
+      // fire Handle Fail method
 
-  // ======== Guess and Check ========
-    // Prompt user for a guess
-      // validate that it is indeed a letter
-    // Take value provided from user input, make it lowercase
-    // check to see if the letter is in the Already Guessed Letters Array
-      // If so, alert the user that they already guessed that letter
-      // Fire Guess and Check
-    // check to see if the letter is in the phrase
-      // Yes?
-        // add relevant points from current spin value to the contestant score
-        // Update display to show guessed letter where applicable (Phrase Board/Guessed Letter)
-        // update point total in display
-        // Fire Spin Wheel method
-      // No?
-        // If there are more contestants
-          // return,
-          // else: Fire Spin Wheel
+  // ======== Handle Success ========
+    // tell user that there are X letters! and to spin again
+    // show letter in Phrase Board
+    // add letter to Guessed letters array
+    // display guessed letter in Guessed Letter div
+    // loop through current guessed letters
+      // if current guessed letter is in the vowels array
+        // Fire Do Turn method
+      // else
+        // grab how many times the letter appears in the phrase
+        // multiply current spin val by how many times the letter appears in the phrase
+        // add to player's total
+        // Fire Do Turn method
 
-  // ======== Game Over ========
-    // interate through contestant array
-      // if Contestant array.length = 1
-        // if the Contestant's score is > 10
-          // modal text: congrats you win!, Click to play again
-        // else: modal-text: too bad. play again!
-        // modalm pops up with start new game function that reloads the page
-      // else:
-        // gather contestant scores
-        // compare contestant scores
-        // whoever has the highest score wins.
+  // ======== Handle Fail ========
+    // alert user that there are no letters of that type on the board. + [Next Contestant's] turn!
+    // add letter to Guessed letters array
+    // display guessed letter in Guessed Letter div
+    // Fire Next Contestant Handler
 
-  // ======== Solve ========
+  // ======== Next Contestant Handler ========
+    // round++
+    // loop through player array
+      // match index to current player property index
+      // contestantNext = iteration+1
+        // if contestantNext >= Contestant Array length
+          // WheelofLuck.currentSong = array[0]
+          // Fire Do Turn method
+        // else:
+          // WheelofLuck.currentSong = array[nextContestant];
+          // Fire Do Turn method
 
-  // ======== Clear/New Game ========
+  // ======== Clear ========
+    // select the input fields and clear/reset each one
+    // set the current spin val to null
+    // set the spin value display to ""
+
+
 
 $(document).ready(function($) {
   var WheelofLuck = {
