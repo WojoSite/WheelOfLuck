@@ -1,0 +1,26 @@
+
+
+#guessed-letters-container{
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  height: auto;
+  box-sizing: border-box;
+  margin: 10px;
+  background-color: green;
+  .guessed-letter-box{
+    box-sizing: border-box;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    background-color: gray;
+    text-align: center;
+    border-bottom: 3px solid black;
+    .guessed-letter{
+      margin: 0;
+      line-height: 50px;
+      color: white;
+      font-size: 30px;
+    }
+  }
+}

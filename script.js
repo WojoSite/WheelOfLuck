@@ -127,7 +127,7 @@ $(document).ready(function($) {
     // ======== Phrase Object Array ========
     phraseArray: [
       {phrase: "Seventh Inning Stretch", hint: "Baseball Break"},
-      {phrase: "Secretary of State", hint: "Fourth in line"},
+      {phrase: "Secretary of State", hint: "Fourth in Line"},
       {phrase: "Wiener Schnitzel", hint: "A Little Vienna Cut"}
     ],
     // ======== Initialize App ========
@@ -178,6 +178,8 @@ $(document).ready(function($) {
       }
     },
     gameBoardCreator: function(){
+      // eventually: show game board (display: [whatever])
+
       console.log("gameBoardCreator!");
       // var txt3 = document.createElement("p");
       // txt3.innerHTML = "Text.";
@@ -213,6 +215,32 @@ $(document).ready(function($) {
       var randomNumber = Math.floor((Math.random() * 3));
       $('#phrase-hint').html('Phrase Hint: ' + WheelofLuck.phraseArray[randomNumber].hint);
 
+      var currentPhrase = WheelofLuck.phraseArray[randomNumber].phrase;
+
+      var PhraseBdCont = document.getElementById('phrase-board-container');
+
+      var breakEl = document.createElement("br");
+
+      for (var i = 0; i < currentPhrase.length; i++) {
+
+        if (currentPhrase[i] == " ") {
+          var phraseBdDiv = document.createElement("div");
+          phraseBdDiv.className = "phrase-space-div";
+          PhraseBdCont.appendChild(phraseBdDiv);
+
+        } else {
+          var phraseBdDiv = document.createElement("div");
+          phraseBdDiv.className = "phrase-letter-div";
+
+          var phraseBdP = document.createElement("p");
+          phraseBdP.className = "letter";
+          phraseBdP.innerHTML = currentPhrase[i];
+
+          phraseBdDiv.appendChild(phraseBdP);
+          PhraseBdCont.appendChild(phraseBdDiv);
+        }
+
+      }
 
 
     },
