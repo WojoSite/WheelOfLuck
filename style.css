@@ -1,24 +1,32 @@
 #start-game-container {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 10px; }
 
 #gameboard-container {
   box-sizing: border-box; }
   #gameboard-container #contestants-container {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    margin: 0px;
+    padding: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 300px;
-    width: 100%;
-    margin: 10px auto;
-    background: gray; }
+    flex-flow: row wrap; }
     #gameboard-container #contestants-container .contestant {
-      height: 90%;
-      width: 30%;
-      margin: 15px auto;
-      background-color: red; }
+      position: relative;
+      height: 300px;
+      width: 300px;
+      padding: 0;
+      margin: 10px;
+      border: 1px solid black;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+      #gameboard-container #contestants-container .contestant .name {
+        margin: 0; }
+      #gameboard-container #contestants-container .contestant .pts {
+        margin: 0; }
 
 body {
   box-sizing: border-box;
-  padding: 10px; }
+  margin: 0; }
 
 /*# sourceMappingURL=style.css.map */

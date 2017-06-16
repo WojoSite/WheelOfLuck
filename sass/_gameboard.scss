@@ -3,18 +3,27 @@
 #gameboard-container{
   box-sizing: border-box;
   #contestants-container{
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    margin: 0px;
+    padding: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 300px;
-    width: 100%;
-    margin: 10px auto;
-    background: gray;
+    flex-flow: row wrap;
     .contestant{
-      height: 90%;
-      width: 30%;
-      margin: 15px auto;
-      background-color: red;
+      position: relative;
+      height: 300px;
+      width: 300px;
+      padding: 0;
+      margin: 10px;
+      border: 1px solid black;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      .name{
+        margin: 0;
+      }
+      .pts{
+        margin: 0;
+      }
     }
   }
 }
