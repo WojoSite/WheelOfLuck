@@ -12,18 +12,34 @@
     flex-flow: row wrap;
     .contestant{
       position: relative;
-      height: 300px;
-      width: 300px;
+      height: 200px;
+      width: 200px;
       padding: 0;
       margin: 10px;
       border: 1px solid black;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      text-align: center;
       .name{
         margin: 0;
+        line-height: 80px;
+        font-size: 30px;
       }
       .pts{
         margin: 0;
+        line-height: 80px;
+        font-size: 25px;
       }
     }
   }
+  #phrase-hint-container{
+    box-sizing: border-box;
+    background-color: lightblue;
+    margin: 10px;
+    height: 80px;
+    text-align: center;
+    #phrase-hint{
+      line-height: 80px;
+    }
+  }
+
 }

@@ -124,6 +124,12 @@ $(document).ready(function($) {
   var WheelofLuck = {
     // Contain each contestant from the contestant constructor
     contestantArray: [],
+    // ======== Phrase Object Array ========
+    phraseArray: [
+      {phrase: "Seventh Inning Stretch", hint: "Baseball Break"},
+      {phrase: "Secretary of State", hint: "Fourth in line"},
+      {phrase: "Wiener Schnitzel", hint: "A Little Vienna Cut"}
+    ],
     // ======== Initialize App ========
     init: function(){
       console.log("Let's play Wheel of Luck!");
@@ -148,7 +154,9 @@ $(document).ready(function($) {
       if (WheelofLuck.contestantArray.length == 3) {
         alert("You have added the maximum amount of players (3). You can start playing!");
         //make add button disabled, too!
-      } else{
+      } else if ($('#name-input').val() == "") {
+        alert("You must enter a name before adding a player.")
+      }else{
       var userNameInput = $('#name-input').val();
       var nameId = Math.floor(Math.random()*100000+1);
       var nextContestant = new WheelofLuck.Contestant(userNameInput, nameId);
@@ -159,7 +167,7 @@ $(document).ready(function($) {
     },
     // display # of contestants added.
     displayContestantAmt: function(){
-      $('#added-contestants').html("Added contestants: " + WheelofLuck.contestantArray.length);
+      $('#added-contestants').html("Contestants: " + WheelofLuck.contestantArray.length);
     },
      // If the Contestants Array = 0, ask user to enter at least one contestant to play (or disable "add" or "submit" button)
     zeroContestantCheck: function(){
@@ -170,8 +178,42 @@ $(document).ready(function($) {
       }
     },
     gameBoardCreator: function(){
-        console.log("gameBoardCreator!");
-        
+      console.log("gameBoardCreator!");
+      // var txt3 = document.createElement("p");
+      // txt3.innerHTML = "Text.";
+      // $("body").append(txt1, txt2, txt3);
+
+      var contestantsContainer = document.getElementById('contestants-container');
+
+      for (var i = 0; i < WheelofLuck.contestantArray.length; i++) {
+        var contestantDiv = document.createElement("div");
+        contestantDiv.className = "contestant";
+        contestantDiv.setAttribute('id', WheelofLuck.contestantArray[i].id);
+
+        var nameDiv = document.createElement("div");
+        nameDiv.className = "contestant-name";
+        var nameP = document.createElement("p");
+        nameP.className = "name";
+        nameP.innerHTML = WheelofLuck.contestantArray[i].name;
+
+        var ptsDiv = document.createElement("div");
+        ptsDiv.className = "contestant-points";
+        var ptsP = document.createElement("p");
+        ptsP.className = "pts";
+        ptsP.innerHTML = WheelofLuck.contestantArray[i].points;
+
+        nameDiv.appendChild(nameP);
+        ptsDiv.appendChild(ptsP);
+        contestantDiv.appendChild(nameDiv);
+        contestantDiv.appendChild(ptsDiv);
+        contestantsContainer.appendChild(contestantDiv);
+      }
+
+      // Randomly select object from Phrase Object Array
+      var randomNumber = Math.floor((Math.random() * 3));
+      $('#phrase-hint').html('Phrase Hint: ' + WheelofLuck.phraseArray[randomNumber].hint);
+
+
 
     },
 
@@ -182,6 +224,7 @@ $(document).ready(function($) {
     Contestant: function(name, id){
       this.name = name;
       this.id = id;
+      this.points = 0;
       console.log(this);
       WheelofLuck.contestantArray.push(this);
     },
