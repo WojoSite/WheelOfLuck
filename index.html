@@ -21,7 +21,7 @@
 
 
     <!-- START GAME CONTAINER (hides after submit)-->
-    <div id="start-game-container">
+    <dSiv id="start-game-container">
       <!-- WELCOME -->
       <h1>Welcome!</h1>
       <!-- RULES DESCRIPTION, if you're playing alone try to achieve 10 -->
@@ -34,13 +34,14 @@
       </form>
       <button id="contestant-add-btn" type="button" name="button">Add Player</button>
 
-      <!-- START GAME BUTTON -->
-      <button id="start-game-btn" type="button" name="button">Load Game</button>
+      <!-- LOAT GAME BUTTON -->
+      <button id="load-game-btn" type="button" name="button">Load Game</button>
       <div id="added-contestants"></div>
     </div>
 
     <!-- GAME BOARD CONTAINER (displays upon start button click)-->
     <div id="gameboard-container">
+      <button id="start-game" type="button" name="button">Start Game</button>
 
       <!-- CONTESTANTS CONTAINER: flexbox -->
       <div id="contestants-container">
@@ -66,12 +67,30 @@
 
       <!-- GAMEPLAY CONTAINER -->
       <div id="gameplay-container">
+        <!-- Display current contestant -->
+        <div id="current-turn">
+          <p id="current-turn-name"></p>
+        </div>
       <!-- Display current round -->
-      <!-- Display current contestant -->
+      <div id="round-box">
+        <p id="round"></p>
+      </div>
       <!-- Spin button -->
+      <button id="spin-btn">Spin!</button>
+
       <!-- Show spin result -->
       <!-- Choose letter -->
+      <!-- VOWEL -->
+      <form id="vowel-input-container">
+        <input id="vowel-input" type="text" name="" value="" placeholder="Enter Vowel">
+        <div id="vowel-submit">Buy Vowel</div>
+      </form>
 
+      <!-- CONSONANT -->
+      <form id="consonant-form">
+        <input id="consonant-input" type="text" name="" value="" placeholder="Enter Consonant">
+        <div id="consonant-submit">Make Consonant Guess</div>
+      </form>
 
 
       </div>

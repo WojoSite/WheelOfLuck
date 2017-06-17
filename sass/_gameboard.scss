@@ -2,6 +2,9 @@
 
 #gameboard-container{
   box-sizing: border-box;
+  #start-game{
+    display: none;
+  }
   #contestants-container{
     position: relative;
     box-sizing: border-box;
@@ -32,7 +35,7 @@
     }
   }
   #gameplay-container{
-    
+
   }
   #phrase-hint-container{
     position: relative;
