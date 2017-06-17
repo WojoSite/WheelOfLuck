@@ -199,6 +199,7 @@ $(document).ready(function($) {
         var ptsP = document.createElement("p");
         ptsP.className = "pts";
         ptsP.innerHTML = WheelofLuck.contestantArray[i].points;
+        ptsP.setAttribute('id', WheelofLuck.contestantArray[i].id + "pts");
 
         nameDiv.appendChild(nameP);
         ptsDiv.appendChild(ptsP);
@@ -242,7 +243,7 @@ $(document).ready(function($) {
     Contestant: function(name, id){
       this.name = name;
       this.id = id;
-      this.points = 20;
+      this.points = 0;
       WheelofLuck.contestantArray.push(this);
     },
     // ======== Clear Contestant Constructor ========
@@ -264,8 +265,8 @@ $(document).ready(function($) {
       console.log("Do Turn Fired!");
       WheelofLuck.clear();
       // display name and current round at top of gameplay div
-      $('#current-turn-name').html(WheelofLuck.currentContestant.name);
-      $('#round').html(WheelofLuck.roundCounter)
+      $('#current-turn-name').html("Current Turn: " + WheelofLuck.currentContestant.name);
+      $('#round').html("Round: " + WheelofLuck.roundCounter);
       // listen for spin wheel click
       $('#spin-btn').on('click', WheelofLuck.spinWheel);
     },
@@ -305,12 +306,13 @@ $(document).ready(function($) {
       if ($.inArray(vowelEntry, WheelofLuck.vowels) == -1){
         alert("Please enter a vowel.");
       } else if ($.inArray(vowelEntry, WheelofLuck.guessedLetters) != -1){
-        alert(vowelEntry+ "has aleady been guessed. Next player's turn!");
+        alert(vowelEntry + " has already been guessed. Next player's turn!");
         WheelofLuck.nextContestant();
       } else {
         for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
           if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
             WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points - 1;
+            $('#' +WheelofLuck.currentContestant.id + "pts").html(WheelofLuck.contestantArray[i].points);
           }
         }
         WheelofLuck.guessedLetters.push(vowelEntry);
@@ -330,8 +332,6 @@ $(document).ready(function($) {
           WheelofLuck.nextContestant();
         } else {
           WheelofLuck.guessedLetters.push(consonantEntry);
-
-          console.log(WheelofLuck.guessedLetters);
           WheelofLuck.checkGuess();
         }
     },
@@ -368,12 +368,14 @@ $(document).ready(function($) {
         for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
           if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
             WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points += pointsAwarded;
+
           }
         }
         WheelofLuck.doTurn();
       }
     },
     handleFail: function(){
+      console.log("Handle Fail fired");
         alert("Sorry, there are no " + WheelofLuck.currentGuess + "'s")
         WheelofLuck.handleGuessedLetter();
         WheelofLuck.nextContestant();
@@ -381,19 +383,23 @@ $(document).ready(function($) {
     nextContestant: function(){
       console.log("Fired: Next Contestant");
       // ======== Next Contestant Handler ========
-        // round++
-        WheelofLuck.roundCounter++;
         var nextContestant;
         // loop through player array
         for (var i = 0; i < WheelofLuck.contestantArray.length; i++) {
           if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
+            if (WheelofLuck.currentContestant[i] == 2){
+              WheelofLuck.roundCounter++;
+            }
             nextContestant = i+1;
             if (nextContestant >= WheelofLuck.contestantArray.length){
               WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
+              $('#current-turn-name').html(WheelofLuck.currentContestant.name);
               WheelofLuck.doTurn();
             } else {
               WheelofLuck.currentContestant = WheelofLuck.contestantArray[nextContestant];
+              $('#current-turn-name').html(WheelofLuck.currentContestant.name);
               WheelofLuck.doTurn();
+              break
             }
 
           }
@@ -420,12 +426,9 @@ $(document).ready(function($) {
           vowelSearchInput.reset();
           var consonantSearchInput = document.getElementById("consonant-form");
           consonantSearchInput.reset();
-          // clear currentSpinVal
-          // clear multiplier
+          $('#spin-result').html('');
+          WheelofLuck.multiplier = [];
           return false
-          // set the current spin val to null
-          // set the spin value display to ""
-
     }
   }
   WheelofLuck.init();
