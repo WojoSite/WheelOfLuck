@@ -263,20 +263,18 @@ $(document).ready(function($) {
       $('#current-turn-name').html(WheelofLuck.currentContestant.name);
       $('#round').html(WheelofLuck.roundCounter)
       // listen for spin wheel click
-      var spinBtn = document.getElementById('spin-btn');
-      spinBtn.addEventListener("click", WheelofLuck.spinWheel);
-      var vowelSubmit = document.getElementById('vowel-submit');
-      vowelSubmit.addEventListener("click", WheelofLuck.buyVowel);
+      $('#spin-btn').on('click', WheelofLuck.spinWheel);
+      $('#vowel-submit').on('click', WheelofLuck.buyVowel);
         // add listener to Buy a Vowel Click
           // make button live when enabled (add class)
-      var consonantInput = document.getElementById('consonant-submit');
-      consonantInput.addEventListener("click", WheelofLuck.consonantEntry);
+      $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
         // add listener to Consonant entry Click
           // make button live when enabled (add class)
     },
     spinWheel: function(){
       console.log("Spin wheel fired!");
         // produce random number between 1 and 11
+        var randomNumber = Math.floor((Math.random() * 11));
 
         // grab the object in the Wheel Object Array whose index corresponds to the random number
         // place value in currentSpinVal
@@ -363,7 +361,7 @@ $(document).ready(function($) {
             // else:
               // WheelofLuck.currentSong = array[nextContestant];
               // Fire Do Turn method
-    }
+    },
     clear: function(){
       console.log("Clear!");
         // ======== Clear ========
