@@ -116,7 +116,7 @@ $(document).ready(function($) {
       {phrase: "Wiener Schnitzel", hint: "A Little Vienna Cut"}
     ],
     // ======== Wheel Object Array ======== Holds objects representing wheel pieces and corresponding pt values
-    wheel: [1,1,1,2,2,2,3,3,4,4,5,"lose turn", "bankrupt"],
+    wheel: [1,1,1,2,2,2,3,3,4,4,5,"Lose Turn", "Bankrupt"],
     consonants: ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"],
     vowels: ["a", "e", "i", "o", "u"],
     guessedLetters: [],
@@ -264,30 +264,32 @@ $(document).ready(function($) {
       $('#round').html(WheelofLuck.roundCounter)
       // listen for spin wheel click
       $('#spin-btn').on('click', WheelofLuck.spinWheel);
-      $('#vowel-submit').on('click', WheelofLuck.buyVowel);
-        // add listener to Buy a Vowel Click
-          // make button live when enabled (add class)
-      $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
-        // add listener to Consonant entry Click
-          // make button live when enabled (add class)
     },
     spinWheel: function(){
       console.log("Spin wheel fired!");
         // produce random number between 1 and 11
-        var randomNumber = Math.floor((Math.random() * 11));
+        var randomNumber = Math.floor((Math.random() * 13));
 
         // grab the object in the Wheel Object Array whose index corresponds to the random number
         // place value in currentSpinVal
+        WheelofLuck.currentSpinVal = WheelofLuck.wheel[randomNumber];
         // display currentSpinVal in gameplay div
+        $('#spin-result').html(WheelofLuck.currentSpinVal);
+
           // if currentSpinVal = "lose turn"
-            // alert("Result: Lose Turn! Next!")
-            // fire Next Contestant Handler
-          // else if currentSpinVal = "bankrupt"
-            // alert("Result: Bankrupt! Next!")
+          if (WheelofLuck.currentSpinVal == "Lose Turn"){
+            alert("Result: Lose Turn! Next!");
+            WheelofLuck.nextContestant();
+          } else if (WheelofLuck.currentSpinVal == "Bankrupt") {
+            alert("Result: Bankrupt! Next!");
             // update points total of current player in contestant array to 0.
-            // fire Next Contestant Handler
-          // else
-            // display currentSpinVal in gameplay div
+            WheelofLuck.nextContestant();
+          } else {
+            $('#vowel-submit').on('click', WheelofLuck.buyVowel);
+                // make button live when enabled (add class)
+            $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
+                // make button live when enabled (add class)
+          }
     },
     buyVowel: function(){
       console.log("Buy vowel click success");
@@ -350,6 +352,7 @@ $(document).ready(function($) {
         // Fire Next Contestant Handler
     },
     nextContestant: function(){
+      console.log("Fired: Next Contestant");
       // ======== Next Contestant Handler ========
         // round++
         // loop through player array
