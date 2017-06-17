@@ -329,12 +329,14 @@ $(document).ready(function($) {
           WheelofLuck.nextContestant();
         } else {
           WheelofLuck.guessedLetters.push(consonantEntry);
+
           console.log(WheelofLuck.guessedLetters);
           WheelofLuck.checkGuess();
         }
     },
     checkGuess: function(){
       console.log("Check Guess Success!");
+
       if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.currentPhrase) != -1){
         WheelofLuck.handleSuccess();
       } else {
@@ -345,6 +347,7 @@ $(document).ready(function($) {
       console.log("Handle Success Fired!");
       // ======== Handle Success ========
         // tell user that there are X letters! and to spin again
+
         // show letter in Phrase Board
         // add letter to Guessed letters array
         // display guessed letter in Guessed Letter div
@@ -359,11 +362,9 @@ $(document).ready(function($) {
     },
     handleFail: function(){
       console.log("Handle Fail Fired!");
-      // ======== Handle Fail ========
-        // alert user that there are no letters of that type on the board. + [Next Contestant's] turn!
-        // add letter to Guessed letters array
-        // display guessed letter in Guessed Letter div
-        // Fire Next Contestant Handler
+        alert("Sorry, there are no " + WheelofLuck.currentGuess + "'s")
+        WheelofLuck.handleGuessedLetter();
+        WheelofLuck.nextContestant();
     },
     nextContestant: function(){
       console.log("Fired: Next Contestant");
@@ -380,7 +381,7 @@ $(document).ready(function($) {
               // Fire Do Turn method
     },
     handleGuessedLetter: function(){
-
+      console.log("Hand Guessed Letter Fired");
     },
     clear: function(){
       console.log("Clear!");
