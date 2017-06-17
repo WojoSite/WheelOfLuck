@@ -111,16 +111,17 @@ $(document).ready(function($) {
     currentContestant: null,
     // ======== Phrase Object Array ========
     phraseArray: [
-      {phrase: "Seventh Inning Stretch", hint: "Baseball Break", cateory: "Baseball"},
-      {phrase: "Secretary of State", hint: "Fourth in Line"},
-      {phrase: "Wiener Schnitzel", hint: "A Little Vienna Cut"}
+      {phrase: "SEVENTH INNING STRETCH", hint: "Baseball Break", cateory: "Baseball"},
+      {phrase: "SECRETARY OF STATE", hint: "Fourth in Line"},
+      {phrase: "WEINER SCHNITZEL", hint: "A Little Vienna Cut"}
     ],
     currentPhrase: null,
     // ======== Wheel Object Array ======== Holds objects representing wheel pieces and corresponding pt values
     wheel: [1,1,1,2,2,2,3,3,4,4,5,"Lose Turn", "Bankrupt"],
-    consonants: ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"],
-    vowels: ["a", "e", "i", "o", "u"],
+    consonants: ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"],
+    vowels: ["A","E","I","O","U"],
     currentGuess: null,
+    multiplier: [],
     guessedLetters: [],
     currentSpinVal: null,
     // create round counter property
@@ -174,7 +175,6 @@ $(document).ready(function($) {
       if (WheelofLuck.contestantArray.length == 0){
         alert("You must enter at least one contestant to play.");
       } else {
-
         WheelofLuck.gameBoardCreator();
       }
     },
@@ -216,7 +216,7 @@ $(document).ready(function($) {
 
       var PhraseBdCont = document.getElementById('phrase-board-container');
 
-      var breakEl = document.createElement("br");
+      // make words go onto new lines at spaces
 
       for (var i = 0; i < WheelofLuck.currentPhrase.length; i++) {
 
@@ -231,7 +231,7 @@ $(document).ready(function($) {
 
           var phraseBdP = document.createElement("p");
           phraseBdP.className = "letter";
-          phraseBdP.innerHTML = WheelofLuck.currentPhrase[i];
+          phraseBdP.id = i;
 
           phraseBdDiv.appendChild(phraseBdP);
           PhraseBdCont.appendChild(phraseBdDiv);
@@ -242,7 +242,7 @@ $(document).ready(function($) {
     Contestant: function(name, id){
       this.name = name;
       this.id = id;
-      this.points = 10;
+      this.points = 20;
       WheelofLuck.contestantArray.push(this);
     },
     // ======== Clear Contestant Constructor ========
@@ -261,6 +261,7 @@ $(document).ready(function($) {
     },
     // ======== Do Turn ========
     doTurn: function(){
+      console.log("Do Turn Fired!");
       WheelofLuck.clear();
       // display name and current round at top of gameplay div
       $('#current-turn-name').html(WheelofLuck.currentContestant.name);
@@ -299,7 +300,7 @@ $(document).ready(function($) {
     },
     buyVowel: function(){
       console.log("Buy vowel click success");
-      var vowelEntry = $('#vowel-input').val().toLowerCase();
+      var vowelEntry = $('#vowel-input').val().toUpperCase();
       WheelofLuck.currentGuess = vowelEntry;
       if ($.inArray(vowelEntry, WheelofLuck.vowels) == -1){
         alert("Please enter a vowel.");
@@ -320,7 +321,7 @@ $(document).ready(function($) {
     consonantEntry: function(){
       console.log("Consonant Entry!");
         // grab value from consonant input, to lowercase
-        var consonantEntry = $('#consonant-input').val().toLowerCase();
+        var consonantEntry = $('#consonant-input').val().toUpperCase();
         WheelofLuck.currentGuess = consonantEntry;
         if ($.inArray(consonantEntry, WheelofLuck.consonants) == -1){
           alert("Please enter a valid consonant.");
@@ -336,7 +337,6 @@ $(document).ready(function($) {
     },
     checkGuess: function(){
       console.log("Check Guess Success!");
-
       if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.currentPhrase) != -1){
         WheelofLuck.handleSuccess();
       } else {
@@ -345,23 +345,35 @@ $(document).ready(function($) {
     },
     handleSuccess: function() {
       console.log("Handle Success Fired!");
-      // ======== Handle Success ========
-        // tell user that there are X letters! and to spin again
-
-        // show letter in Phrase Board
-        // add letter to Guessed letters array
-        // display guessed letter in Guessed Letter div
-        // loop through current guessed letters
-          // if current guessed letter is in the vowels array
-            // Fire Do Turn method
-          // else
-            // grab how many times the letter appears in the phrase
-            // multiply current spin val by how many times the letter appears in the phrase
-            // add to player's total
-            // Fire Do Turn method
+      // tell user that there are X letters! and to spin again
+      for (var i = 0; i < WheelofLuck.currentPhrase.length; i++) {
+        if (WheelofLuck.currentPhrase[i] == WheelofLuck.currentGuess){
+          WheelofLuck.multiplier.push(WheelofLuck.currentPhrase[i]);
+          // show letter in Phrase Board
+          var letterBox = document.getElementById(i);
+          letterBox.innerHTML = WheelofLuck.currentGuess;
+        }
+      }
+      var letterMultiplier = WheelofLuck.multiplier.length;
+      var pointsAwarded = (WheelofLuck.currentSpinVal * letterMultiplier);
+      if (letterMultiplier == 1){
+        alert("There is one " + WheelofLuck.currentGuess + "!");
+      } else {
+        alert("There are " + letterMultiplier + " " + WheelofLuck.currentGuess + "'s !");
+      }
+      // if current guessed letter is in the vowels array
+      if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.vowels) != -1){
+          WheelofLuck.doTurn();
+      } else {
+        for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
+          if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
+            WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points += pointsAwarded;
+          }
+        }
+        WheelofLuck.doTurn();
+      }
     },
     handleFail: function(){
-      console.log("Handle Fail Fired!");
         alert("Sorry, there are no " + WheelofLuck.currentGuess + "'s")
         WheelofLuck.handleGuessedLetter();
         WheelofLuck.nextContestant();
@@ -370,18 +382,35 @@ $(document).ready(function($) {
       console.log("Fired: Next Contestant");
       // ======== Next Contestant Handler ========
         // round++
+        WheelofLuck.roundCounter++;
+        var nextContestant;
         // loop through player array
-          // match index to current player property index
-          // contestantNext = iteration+1
-            // if contestantNext >= Contestant Array length
-              // WheelofLuck.currentSong = array[0]
-              // Fire Do Turn method
-            // else:
-              // WheelofLuck.currentSong = array[nextContestant];
-              // Fire Do Turn method
+        for (var i = 0; i < WheelofLuck.contestantArray.length; i++) {
+          if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
+            nextContestant = i+1;
+            if (nextContestant >= WheelofLuck.contestantArray.length){
+              WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
+              WheelofLuck.doTurn();
+            } else {
+              WheelofLuck.currentContestant = WheelofLuck.contestantArray[nextContestant];
+              WheelofLuck.doTurn();
+            }
+
+          }
+        }
     },
     handleGuessedLetter: function(){
-      console.log("Hand Guessed Letter Fired");
+      console.log("Handle Guessed Letter Fired");
+      var guessedLtrContainer = document.getElementById("guessed-letters-container");
+      var mostRecentGuessedLetter = WheelofLuck.guessedLetters[WheelofLuck.guessedLetters.length-1];
+      var guessedLtrBox = document.createElement("div");
+      guessedLtrBox.className = "guessed-letter-box";
+      var guessedLtr = document.createElement("p");
+      guessedLtr.className = "guessed-letter";
+      guessedLtr.innerHTML = mostRecentGuessedLetter;
+      guessedLtrBox.appendChild(guessedLtr);
+      guessedLtrContainer.appendChild(guessedLtrBox);
+
     },
     clear: function(){
       console.log("Clear!");
@@ -391,6 +420,8 @@ $(document).ready(function($) {
           vowelSearchInput.reset();
           var consonantSearchInput = document.getElementById("consonant-form");
           consonantSearchInput.reset();
+          // clear currentSpinVal
+          // clear multiplier
           return false
           // set the current spin val to null
           // set the spin value display to ""
