@@ -146,7 +146,6 @@ $(document).ready(function($) {
       // Start Game
       var startBtn = document.getElementById('start-game');
       startBtn.addEventListener("click", WheelofLuck.gamePlay);
-
     },
     addContestant: function(){
 
@@ -257,18 +256,21 @@ $(document).ready(function($) {
       // add contestant at index 0 to Current Player property
       WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
       WheelofLuck.roundCounter++;
+      // Spin
+      $('#spin-btn').on('click', WheelofLuck.spinWheel);
       WheelofLuck.doTurn();
 
     },
     // ======== Do Turn ========
     doTurn: function(){
       console.log("Do Turn Fired!");
-      WheelofLuck.clear();
+      WheelofLuck.clearBoth();
+
       // display name and current round at top of gameplay div
       $('#current-turn-name').html("Current Turn: " + WheelofLuck.currentContestant.name);
       $('#round').html("Round: " + WheelofLuck.roundCounter);
       // listen for spin wheel click
-      $('#spin-btn').on('click', WheelofLuck.spinWheel);
+
     },
     spinWheel: function(){
       console.log("Spin wheel fired!");
@@ -279,23 +281,26 @@ $(document).ready(function($) {
       // place value in currentSpinVal
       WheelofLuck.currentSpinVal = WheelofLuck.wheel[randomNumber];
       // display currentSpinVal in gameplay div
-      $('#spin-result').html(WheelofLuck.currentSpinVal);
+      $('#spin-result').html("Spin Result: " + WheelofLuck.currentSpinVal);
 
-        // if currentSpinVal = "lose turn"
-        if (WheelofLuck.currentSpinVal == "Lose Turn"){
-          alert("Result: Lose Turn! Next!");
-          WheelofLuck.nextContestant();
-        } else if (WheelofLuck.currentSpinVal == "Bankrupt") {
-          alert("Result: Bankrupt! Next!");
-          // update points total of current player in contestant array to 0.
-          WheelofLuck.nextContestant();
-        } else {
-          $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
-          for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
-            if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id && WheelofLuck.contestantArray[i].points > 0){
-              $('#vowel-submit').on('click', WheelofLuck.buyVowel);
-              // make button live when enabled (add class)
-            }
+      // if currentSpinVal = "lose turn"
+      if (WheelofLuck.currentSpinVal == "Lose Turn"){
+        alert("Result: Lose Turn! Next!");
+
+        WheelofLuck.nextContestant();
+      } else if (WheelofLuck.currentSpinVal == "Bankrupt") {
+        alert("Result: Bankrupt! Next!");
+        // update points total of current player in contestant array to 0.
+        WheelofLuck.nextContestant();
+      } else {
+        $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
+        // make button live when enabled (add class)
+      }
+      //add vowel subit listener only if contestant has more than 1 or more pts
+      for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
+        if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id && WheelofLuck.contestantArray[i].points > 0){
+            $('#vowel-submit').on('click', WheelofLuck.buyVowel);
+            // make button live when enabled (add class)
           }
         }
     },
@@ -303,35 +308,37 @@ $(document).ready(function($) {
       console.log("Buy vowel click success");
       var vowelEntry = $('#vowel-input').val().toUpperCase();
       WheelofLuck.currentGuess = vowelEntry;
-      if ($.inArray(vowelEntry, WheelofLuck.vowels) == -1){
+      if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.vowels) == -1){
         alert("Please enter a vowel.");
-      } else if ($.inArray(vowelEntry, WheelofLuck.guessedLetters) != -1){
-        alert(vowelEntry + " has already been guessed. Next player's turn!");
+      } else if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.guessedLetters) != -1){
+        alert(WheelofLuck.currentGuess + " has already been guessed. Next player's turn!");
         WheelofLuck.nextContestant();
       } else {
         for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
           if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
             WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points - 1;
-            $('#' +WheelofLuck.currentContestant.id + "pts").html(WheelofLuck.contestantArray[i].points);
+            var ptSelector = '#' +WheelofLuck.currentContestant.id + "pts";
+            $(ptSelector).html(WheelofLuck.contestantArray[i].points);
           }
         }
-        WheelofLuck.guessedLetters.push(vowelEntry);
+        WheelofLuck.guessedLetters.push(WheelofLuck.currentGuess);
         console.log(WheelofLuck.guessedLetters);
         WheelofLuck.checkGuess();
+
       }
     },
     consonantEntry: function(){
       console.log("Consonant Entry!");
         // grab value from consonant input, to lowercase
-        var consonantEntry = $('#consonant-input').val().toUpperCase();
-        WheelofLuck.currentGuess = consonantEntry;
-        if ($.inArray(consonantEntry, WheelofLuck.consonants) == -1){
+        var consonantInput = $('#consonant-input').val().toUpperCase();
+        WheelofLuck.currentGuess = consonantInput;
+        if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.consonants) == -1){
           alert("Please enter a valid consonant.");
-        } else if ($.inArray(consonantEntry, WheelofLuck.guessedLetters) != -1){
-          alert(consonantEntry + "has aleady been guessed. Next player's turn!");
+        } else if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.guessedLetters) != -1){
+          alert(WheelofLuck.currentGuess + " has aleady been guessed. Next player's turn!");
           WheelofLuck.nextContestant();
         } else {
-          WheelofLuck.guessedLetters.push(consonantEntry);
+          WheelofLuck.guessedLetters.push(WheelofLuck.currentGuess);
           WheelofLuck.checkGuess();
         }
     },
@@ -364,14 +371,14 @@ $(document).ready(function($) {
       // if current guessed letter is in the vowels array
       if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.vowels) != -1){
           WheelofLuck.doTurn();
-      } else {
-        for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
-          if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
-            WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points += pointsAwarded;
-
-          }
+      }
+      for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
+        if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
+          WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points += pointsAwarded;
+          var ptSelector = '#' +WheelofLuck.currentContestant.id + "pts";
+          $(ptSelector).html(WheelofLuck.contestantArray[i].points);
+          WheelofLuck.doTurn();
         }
-        WheelofLuck.doTurn();
       }
     },
     handleFail: function(){
@@ -387,21 +394,19 @@ $(document).ready(function($) {
         // loop through player array
         for (var i = 0; i < WheelofLuck.contestantArray.length; i++) {
           if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
-            if (WheelofLuck.currentContestant[i] == 2){
-              WheelofLuck.roundCounter++;
-            }
             nextContestant = i+1;
             if (nextContestant >= WheelofLuck.contestantArray.length){
               WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
               $('#current-turn-name').html(WheelofLuck.currentContestant.name);
+              WheelofLuck.roundCounter++;
               WheelofLuck.doTurn();
+              break
             } else {
               WheelofLuck.currentContestant = WheelofLuck.contestantArray[nextContestant];
               $('#current-turn-name').html(WheelofLuck.currentContestant.name);
               WheelofLuck.doTurn();
               break
             }
-
           }
         }
     },
@@ -416,18 +421,16 @@ $(document).ready(function($) {
       guessedLtr.innerHTML = mostRecentGuessedLetter;
       guessedLtrBox.appendChild(guessedLtr);
       guessedLtrContainer.appendChild(guessedLtrBox);
-
     },
-    clear: function(){
+    clearBoth: function(){
       console.log("Clear!");
-        // ======== Clear ========
-          // select the input fields and clear/reset each one
-          var vowelSearchInput = document.getElementById("vowel-input-container");
-          vowelSearchInput.reset();
-          var consonantSearchInput = document.getElementById("consonant-form");
-          consonantSearchInput.reset();
+          $('#vowel-input').val('');
+          $('#consonant-input').val('');
           $('#spin-result').html('');
           WheelofLuck.multiplier = [];
+          WheelofLuck.currentSpinVal = null;
+          $('#vowel-submit').off('click');
+          $('#consonant-submit').off('click');
           return false
     }
   }
