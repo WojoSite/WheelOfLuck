@@ -77,6 +77,10 @@ $(document).ready(function($) {
     },
     gameBoardCreator: function(){
       $('#start-game').css('display', 'inline-block');
+      $('#gameboard-container').css('display', 'block');
+      $('#start-game-container').css('display', 'none');
+
+
       // HIDE THE START GAME CONTAINER
       var contestantsContainer = document.getElementById('contestants-container');
 
@@ -159,6 +163,7 @@ $(document).ready(function($) {
       WheelofLuck.doTurn();
       $('#solve-puzzle').on('click', WheelofLuck.puzzleSolve);
       WheelofLuck.doTurn();
+      $('#vowel-submit').on('click', WheelofLuck.buyVowel);
 
     },
     // ======== Do Turn ========
@@ -213,8 +218,8 @@ $(document).ready(function($) {
       //add vowel subit listener only if contestant has more than 1 or more pts
       for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
         if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id && WheelofLuck.contestantArray[i].points > 0){
-            $('#vowel-submit').on('click', WheelofLuck.buyVowel);
-            // make button live when enabled (add class)
+            console.log("Make vowel button appear");
+            // make button appear (add class?)
           }
         }
     },
@@ -336,16 +341,16 @@ $(document).ready(function($) {
       guessedLtrContainer.appendChild(guessedLtrBox);
     },
     puzzleSolve: function(){
-      var solveGuess = $('#solve-input').val();
-      solveGuess.toUpperCase();
+      var solveGuess = $('#solve-input').val().toUpperCase();
+      console.log(solveGuess);
       // on solve-puzzle btn click
       // get value of solve-input
-      if (solveGuess == )
-      // if solve value is equal to the current phrase
-        // alert user that the guess is correct and that they win!
-      // else
-        // alert user that the guess is incorrect
-        // fire next contestant
+      if (solveGuess == WheelofLuck.currentPhrase.toUpperCase()){
+        alert("Correct! You win!");
+      } else {
+        alert("Sorry, that is incorrect. Next player's turn!");
+        WheelofLuck.nextContestant();
+      }
     },
     clearBoth: function(){
       console.log("Clear!");

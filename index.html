@@ -48,29 +48,10 @@
 
     <!-- GAME BOARD CONTAINER (displays upon start button click)-->
     <div id="gameboard-container">
-      <button id="start-game" type="button" name="button">Start Game</button>
+    <button id="start-game" type="button" name="button">Start Game</button>
 
       <!-- CONTESTANTS CONTAINER: flexbox -->
-      <div id="contestants-container">
-
-        <!-- CONTESTANT DIV -->
-        <!-- <div class="contestant" id="contestant1"> -->
-
-          <!-- CONTESTANT NAME - DYNAMICALLY CREATED -->
-          <!-- <div class="contestant-name"> -->
-            <!-- <p class="name" id="contestant1-name">Matt</p> -->
-          <!-- </div> -->
-          <!-- CONTESTANT POINTS -->
-          <!-- <div class="contestant-points"> -->
-            <!-- <p class="pts" id="contestant1-pts">Points: 12</p> -->
-          <!-- </div> -->
-
-          <!-- SOLVE BUTTON -->
-
-        <!-- </div> -->
-
-
-      </div>
+      <div id="contestants-container"></div>
 
       <!-- GAMEPLAY CONTAINER -->
       <div id="gameplay-container">
@@ -103,50 +84,24 @@
       </form>
 
       <form id="solve-form">
-        <input id="solve-input" type="text" name="" value="" placeholder="Enter Consonant">
+        <input id="solve-input" type="text" name="" value="" placeholder="Solve Puzzle">
         <div id="solve-puzzle">Solve Puzzle</div>
       </form>
-
       </div>
 
-      <!-- SPIN CONTAINER ????? -->
-        <!-- CIRCLE BUTTON ????? -->
 
       <!-- PHRASE HINT CONTAINER -->
       <div id="phrase-hint-container">
-        <!-- PHRASE HINT DISPLAY -->
         <h2 id="phrase-hint"></h2>
-        <!-- </div> -->
-
       </div>
-
-      <!-- PHRASE BOARD CONTAINER: flexbox, wrap, center justify -->
-      <div id="phrase-board-container">
-
-        <!-- PHRASE LETTER DIV - DYNAMICALLY CREATED -->
-        <!-- <div class="phrase-letter-div"> -->
-          <!-- PHRASE LETTER DISPLAY -->
-          <!-- <p class="letter">P</p> -->
-        <!-- </div> -->
-        <!-- PHRASE SPACE DIV - DYNAMICALLY CREATED -->
-        <!-- <div class="phrase-space-div"> -->
-        <!-- </div> -->
-
+      <!-- PHRASE BOARD CONTAINER -->
+      <div id="phrase-board-container"></div>
+      <!-- GUESSED LETTERS CONTAINER:-->
+      <div id="guessed-letters-container">
+        <h3 id="guessed-header">Guessed Letters</h3>
       </div>
-
     </div>
 
-    <!-- GUESSED LETTERS CONTAINER: flexbox, wrap, center justify -->
-    <div id="guessed-letters-container">
-      <h3 id="guessed-header">Guessed Letters</h3>
-      <!-- GUESSED LETTERS DIV - DYNAMICALLY CREATED -->
-    </div>
-
-
-
-      <!-- GAME OVER MODAL -->
-        <!-- TEXT DISPLAY -->
-        <!-- NEW GAME (REFRESH PAGE) -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>

@@ -1,9 +1,10 @@
 
 
 #gameboard-container{
+  display: none;
   box-sizing: border-box;
   #start-game{
-    display: none;
+
   }
   #contestants-container{
     position: relative;

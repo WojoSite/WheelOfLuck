@@ -12,9 +12,8 @@
   height: 300px; }
 
 #gameboard-container {
+  display: none;
   box-sizing: border-box; }
-  #gameboard-container #start-game {
-    display: none; }
   #gameboard-container #contestants-container {
     position: relative;
     box-sizing: border-box;
