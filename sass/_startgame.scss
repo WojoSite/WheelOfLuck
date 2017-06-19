@@ -1,21 +1,9 @@
 
 
-#start-game-container{
+#load-game-container{
   box-sizing: border-box;
   margin: 10px;
   clear:both;
-  #welcome-holder{
-    text-align: center;
-    #welcome{
-      margin: 0;
-    }
-  }
-  #rules-description{
-    height: auto;
-    width: 400px;
-    margin: 10px auto;
-    padding-left: 80px;
-  }
   #add-player-container{
     height: auto;
     width: 300px;

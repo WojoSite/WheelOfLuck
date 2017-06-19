@@ -60,7 +60,8 @@ $(document).ready(function($) {
       var nameId = Math.floor(Math.random()*100000+1);
       var nextContestant = new WheelofLuck.Contestant(userNameInput, nameId);
       // Fire Clear Construtor method
-      $('#load-game-btn').css('display', 'block');
+      $('#load-game-btn').fadeIn();
+      $('#start-page-message').css('display', 'none');
       WheelofLuck.clearForm();
       WheelofLuck.displayContestantAmt();
       }
@@ -84,10 +85,10 @@ $(document).ready(function($) {
       }
     },
     gameBoardCreator: function(){
-      $('#start-game').css('display', 'inline-block');
-      $('#gameboard-container').css('display', 'block');
-      $('#start-game-container').css('display', 'none');
-
+      $('#load-game-container').slideUp();
+      $('#start-game-container').slideDown();
+      // $('#gameboard-container').slideDown("slow");
+//
 
       // HIDE THE START GAME CONTAINER
       var contestantsContainer = document.getElementById('contestants-container');
@@ -163,6 +164,8 @@ $(document).ready(function($) {
       return false
     },
     gamePlay: function(){
+      $('#start-game-container').slideUp();
+      $('#gameboard-container').slideDown();
       // add contestant at index 0 to Current Player property
       WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
       WheelofLuck.roundCounter++;

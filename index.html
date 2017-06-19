@@ -21,12 +21,26 @@
 
 
     <!-- START GAME CONTAINER (hides after submit)-->
-    <div id="start-game-container">
+    <div id="load-game-container">
       <!-- WELCOME -->
-      <div id="welcome-holder">
-        <h1 id="welcome">Welcome!</h1>
+      <!-- ADD CONTESTANTS FORM -->
+      <div id="add-player-container">
+      <form id="name-input-form">
+        <input id="name-input" type="text" name="" value="" placeholder="Enter Name">
+      </form>
+      <button class="start-screen-btn" id="contestant-add-btn" type="button" name="button">Add Player</button>
+
+      <!-- LOAT GAME BUTTON -->
+      <button class="start-screen-btn" id="load-game-btn" type="button" name="button">Load Game</button>
+      <p id="start-page-message">Enter between 1 and 3 player names to start</p>
+      <div id="added-contestants-container">
+        <p id="added-contestants"></p>
       </div>
-      <!-- RULES DESCRIPTION, if you're playing alone try to achieve 10 -->
+      </div>
+    </div>
+
+    <div id="start-game-container">
+    <!-- RULES DESCRIPTION -->
       <div id="rules-description">
         <p>Rules:</p>
         <ul>
@@ -40,25 +54,11 @@
           <li>Gameplay for 1-3 players.</li>
         </ul>
       </div>
-      <!-- ADD CONTESTANTS FORM -->
-      <div id="add-player-container">
-      <form id="name-input-form">
-        <input id="name-input" type="text" name="" value="" placeholder="Enter Name">
-      </form>
-      <button class="start-screen-btn" id="contestant-add-btn" type="button" name="button">Add Player</button>
-
-      <!-- LOAT GAME BUTTON -->
-      <button class="start-screen-btn" id="load-game-btn" type="button" name="button">Load Game</button>
-      <div id="added-contestants-container">
-        <p id="added-contestants"></p>
-      </div>
-      </div>
-    </div>
-
+      <button id="start-game" type="button" name="button">Start Game</button>
+  </div>
 
     <!-- GAME BOARD CONTAINER (displays upon start button click)-->
     <div id="gameboard-container">
-    <button id="start-game" type="button" name="button">Start Game</button>
 
       <!-- CONTESTANTS CONTAINER: flexbox -->
       <div id="contestants-container"></div>

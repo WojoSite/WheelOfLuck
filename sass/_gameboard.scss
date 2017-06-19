@@ -3,9 +3,6 @@
 #gameboard-container{
   display: none;
   box-sizing: border-box;
-  #start-game{
-
-  }
   #contestants-container{
     position: relative;
     box-sizing: border-box;
@@ -14,10 +11,11 @@
     padding: 10px;
     display: flex;
     flex-flow: row wrap;
+    clear: both;
     .contestant{
       position: relative;
-      height: 200px;
-      width: 200px;
+      height: 100px;
+      width: 250px;
       padding: 0;
       margin: 10px;
       border: 1px solid black;
@@ -25,12 +23,12 @@
       text-align: center;
       .name{
         margin: 0;
-        line-height: 80px;
+        line-height: 50px;
         font-size: 30px;
       }
       .pts{
         margin: 0;
-        line-height: 80px;
+        line-height: 50px;
         font-size: 25px;
       }
     }
