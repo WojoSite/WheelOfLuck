@@ -190,15 +190,19 @@ $(document).ready(function($) {
     roundCheck: function(){
       // stop game after 5 rounds
       if (WheelofLuck.roundCounter == 6){
-        var contestant1Pts = WheelofLuck.contestantArray[0].points;
-        var contestant2Pts = WheelofLuck.contestantArray[1].points;
-        var contestant3Pts = WheelofLuck.contestantArray[2].points;
-        if (contestant1Pts > contestant2Pts && contestant1Pts > contestant3Pts){
-          alert(WheelofLuck.contestantArray[0].name + " wins with " + WheelofLuck.contestantArray[0].points + "points!");
-        } else if (contestant2Pts > contestant1Pts && contestant2Pts > contestant3Pts){
-          alert(WheelofLuck.contestantArray[1].name + " wins with " + WheelofLuck.contestantArray[1].points + "points!");
+        if (WheelofLuck.contestantArray.length = 1){
+          alert("Since it's a solo game, you win!")
         } else {
-          alert(WheelofLuck.contestantArray[2].name + " wins with " + WheelofLuck.contestantArray[2].points + "points!");
+          var contestant1Pts = WheelofLuck.contestantArray[0].points;
+          var contestant2Pts = WheelofLuck.contestantArray[1].points;
+          var contestant3Pts = WheelofLuck.contestantArray[2].points;
+          if (contestant1Pts > contestant2Pts && contestant1Pts > contestant3Pts){
+            alert(WheelofLuck.contestantArray[0].name + " wins with " + WheelofLuck.contestantArray[0].points + "points!");
+          } else if (contestant2Pts > contestant1Pts && contestant2Pts > contestant3Pts){
+            alert(WheelofLuck.contestantArray[1].name + " wins with " + WheelofLuck.contestantArray[1].points + "points!");
+          } else {
+            alert(WheelofLuck.contestantArray[2].name + " wins with " + WheelofLuck.contestantArray[2].points + "points!");
+          }
         }
       }
     },
@@ -220,6 +224,13 @@ $(document).ready(function($) {
         WheelofLuck.nextContestant();
       } else if (WheelofLuck.currentSpinVal == "Bankrupt") {
         alert("Result: Bankrupt! Next!");
+        for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
+          if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
+            WheelofLuck.contestantArray[i].points = 0;
+            var ptSelector = '#' +WheelofLuck.currentContestant.id + "pts";
+            $(ptSelector).html(WheelofLuck.contestantArray[i].points);
+          }
+        }
         // update points total of current player in contestant array to 0.
         WheelofLuck.nextContestant();
       } else {
