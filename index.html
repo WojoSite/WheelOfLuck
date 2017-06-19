@@ -16,7 +16,7 @@
         <p id="logo-text">Wheel of Luck</p>
       </div>
       <!-- NEW GAME -->
-      <button id="newgame-btn">New Game</button>
+      <a href="index.html"><button id="newgame-btn">New Game</button></a>
     </div>
 
 
@@ -63,42 +63,52 @@
       <!-- CONTESTANTS CONTAINER: flexbox -->
       <div id="contestants-container"></div>
 
-      <!-- GAMEPLAY CONTAINER -->
-      <div id="gameplay-container">
-        <!-- Display current contestant -->
-        <div id="current-turn">
-          <p id="current-turn-name"></p>
+      <div id="controller-container">
+        <div id="left-side-controller">
+          <!-- Display current contestant -->
+          <div class="display-item" id="current-turn">
+            <p class="display-name" id="current-turn-name"></p>
+          </div>
+          <!-- Display current round -->
+          <div class="display-item" id="round-box">
+            <p class="display-name" id="round"></p>
+          </div>
+          <!-- Spin button -->
+          <div id="spin-btn">
+            <p id="spin-word">Spin!</p>
+          </div>
+          <div id="spin-restult-container">
+            <p id="spin-result"></p>
+          </div>
         </div>
-      <!-- Display current round -->
-      <div id="round-box">
-        <p id="round"></p>
+        <div id="right-side-controller">
+          <!-- Show spin result -->
+          <!-- Choose letter -->
+          <!-- CONSONANT -->
+
+          <form class="letter-entry-container" id="consonant-form">
+            <input class="inputs" id="consonant-input" type="text" name="" value="" placeholder="Consonant">
+            <div class="submits" id="consonant-submit">
+              <p class="submits-text">Consonant Guess</p>
+            </div>
+          </form>
+
+          <!-- VOWEL -->
+          <form class="letter-entry-container" id="vowel-input-container">
+            <input class="inputs" class="inputs" id="vowel-input" type="text" name="" value="" placeholder="Vowel">
+            <div class="submits" id="vowel-submit">
+              <p class="submits-text">Buy Vowel</p>
+            </div>
+          </form>
+
+          <form class="letter-entry-container" id="solve-form">
+            <input id="solve-input" type="text" name="" value="" placeholder="Solve Puzzle">
+            <div id="solve-puzzle">
+              <p id="solve-text">Solve Puzzle</p>
+            </div>
+          </form>
+        </div>
       </div>
-      <!-- Spin button -->
-      <button id="spin-btn">Spin!</button>
-      <div id="spin-restult-container">
-        <p id="spin-result"></p>
-      </div>
-
-      <!-- Show spin result -->
-      <!-- Choose letter -->
-      <!-- VOWEL -->
-      <form id="vowel-input-container">
-        <input id="vowel-input" type="text" name="" value="" placeholder="Enter Vowel">
-        <div id="vowel-submit">Buy Vowel</div>
-      </form>
-
-      <!-- CONSONANT -->
-      <form id="consonant-form">
-        <input id="consonant-input" type="text" name="" value="" placeholder="Enter Consonant">
-        <div id="consonant-submit">Consonant Guess</div>
-      </form>
-
-      <form id="solve-form">
-        <input id="solve-input" type="text" name="" value="" placeholder="Solve Puzzle">
-        <div id="solve-puzzle">Solve Puzzle</div>
-      </form>
-      </div>
-
 
       <!-- PHRASE HINT CONTAINER -->
       <div id="phrase-hint-container">
@@ -108,7 +118,7 @@
       <div id="phrase-board-container"></div>
       <!-- GUESSED LETTERS CONTAINER:-->
       <div id="guessed-letters-container">
-        <h3 id="guessed-header">Guessed Letters</h3>
+        <h3 id="guessed-header">Guessed Letters:</h3>
       </div>
     </div>
 

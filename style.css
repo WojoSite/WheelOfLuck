@@ -86,13 +86,15 @@
 #gameplay-container {
   box-sizing: border-box;
   margin: 10px;
-  height: 200px; }
+  height: 175px; }
 
 #gameboard-container {
   display: none;
   box-sizing: border-box; }
   #gameboard-container #contestants-container {
     position: relative;
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     height: auto;
     margin: 0px;
@@ -103,7 +105,7 @@
     #gameboard-container #contestants-container .contestant {
       position: relative;
       height: 100px;
-      width: 250px;
+      width: 175px;
       padding: 0;
       margin: 10px;
       border: 1px solid black;
@@ -112,49 +114,125 @@
       #gameboard-container #contestants-container .contestant .name {
         margin: 0;
         line-height: 50px;
-        font-size: 30px; }
+        font-size: 35px;
+        border-bottom: 1px solid lightgray; }
       #gameboard-container #contestants-container .contestant .pts {
         margin: 0;
         line-height: 50px;
-        font-size: 25px; }
+        font-size: 30px; }
+  #gameboard-container #controller-container {
+    box-sizing: border-box;
+    display: flex;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray; }
+    #gameboard-container #controller-container #left-side-controller {
+      position: relative;
+      box-sizing: border-box;
+      width: 50%;
+      margin: 10px;
+      border-right: 1px solid gray; }
+      #gameboard-container #controller-container #left-side-controller .display-item {
+        margin: 10px; }
+      #gameboard-container #controller-container #left-side-controller .display-name {
+        margin: 0;
+        font-size: 20px; }
+      #gameboard-container #controller-container #left-side-controller #current-turn {
+        display: inline-block;
+        float: left; }
+      #gameboard-container #controller-container #left-side-controller #round-box {
+        float: right;
+        display: inline-block; }
+        #gameboard-container #controller-container #left-side-controller #round-box #round {
+          color: red; }
+      #gameboard-container #controller-container #left-side-controller #spin-btn {
+        margin: 60px auto 0 auto;
+        height: 50px;
+        width: 300px;
+        background-color: white;
+        border-style: none;
+        border: 1px solid black;
+        outline: none;
+        text-align: center;
+        cursor: pointer; }
+        #gameboard-container #controller-container #left-side-controller #spin-btn:hover {
+          background-color: gray; }
+        #gameboard-container #controller-container #left-side-controller #spin-btn:active {
+          background-color: black;
+          color: white; }
+        #gameboard-container #controller-container #left-side-controller #spin-btn #spin-word {
+          margin: 0;
+          line-height: 50px;
+          font-size: 30px; }
+    #gameboard-container #controller-container #right-side-controller {
+      box-sizing: border-box;
+      width: 50%;
+      margin: 10px; }
+      #gameboard-container #controller-container #right-side-controller .letter-entry-container {
+        align-items: center; }
+        #gameboard-container #controller-container #right-side-controller .letter-entry-container .submits {
+          display: inline-block;
+          height: 40px;
+          width: 200px;
+          border: 1px solid black;
+          text-align: center;
+          cursor: pointer; }
+          #gameboard-container #controller-container #right-side-controller .letter-entry-container .submits:hover {
+            background-color: gray; }
+          #gameboard-container #controller-container #right-side-controller .letter-entry-container .submits:active {
+            background-color: black;
+            color: white; }
+          #gameboard-container #controller-container #right-side-controller .letter-entry-container .submits .submits-text {
+            margin: 0;
+            line-height: 40px; }
+        #gameboard-container #controller-container #right-side-controller .letter-entry-container .inputs {
+          height: 40px;
+          width: 70px; }
+        #gameboard-container #controller-container #right-side-controller .letter-entry-container #solve-input {
+          height: 40px;
+          width: 200px; }
+        #gameboard-container #controller-container #right-side-controller .letter-entry-container #solve-puzzle {
+          display: inline-block;
+          height: 40px;
+          width: 100px;
+          border: 1px solid black;
+          text-align: center;
+          cursor: pointer; }
+          #gameboard-container #controller-container #right-side-controller .letter-entry-container #solve-puzzle:hover {
+            background-color: gray; }
+          #gameboard-container #controller-container #right-side-controller .letter-entry-container #solve-puzzle:active {
+            background-color: black;
+            color: white; }
+          #gameboard-container #controller-container #right-side-controller .letter-entry-container #solve-puzzle #solve-text {
+            margin: 0;
+            line-height: 40px; }
   #gameboard-container #phrase-hint-container {
     position: relative;
     box-sizing: border-box;
-    background-color: green;
-    margin: 10px;
     height: auto;
     text-align: center; }
     #gameboard-container #phrase-hint-container #phrase-hint {
       margin: 0;
-      line-height: 80px; }
+      line-height: 50px; }
   #gameboard-container #phrase-board-container {
     position: relative;
-    display: flex;
+    padding: 10px;
+    text-align: center;
     flex-flow: row wrap;
     height: auto;
-    box-sizing: border-box;
-    margin: 10px;
-    background-color: lightblue; }
+    box-sizing: border-box; }
     #gameboard-container #phrase-board-container .phrase-letter-div {
+      display: inline-block;
       box-sizing: border-box;
-      height: 80px;
-      width: 80px;
-      margin: 10px;
-      background-color: red;
+      height: 60px;
+      width: 60px;
+      margin: 5px;
       text-align: center;
       border-bottom: 3px solid black; }
       #gameboard-container #phrase-board-container .phrase-letter-div .letter {
         margin: 0;
-        line-height: 80px;
-        color: white;
-        font-size: 40px; }
-    #gameboard-container #phrase-board-container .phrase-space-div {
-      box-sizing: border-box;
-      height: 80px;
-      width: 80px;
-      margin: 10px;
-      background-color: white;
-      text-align: center; }
+        line-height: 60px;
+        color: black;
+        font-size: 35px; }
 
 #guessed-letters-container {
   position: relative;
@@ -162,19 +240,17 @@
   flex-flow: row wrap;
   height: auto;
   box-sizing: border-box;
-  margin: 10px;
-  background-color: green; }
+  padding: 10px;
+  border-top: 1px solid gray; }
   #guessed-letters-container .guessed-letter-box {
     box-sizing: border-box;
     height: 40px;
     width: 40px;
     margin: 10px;
-    background-color: gray;
     text-align: center; }
     #guessed-letters-container .guessed-letter-box .guessed-letter {
       margin: 0;
       line-height: 40px;
-      color: white;
       font-size: 20px; }
 
 body {

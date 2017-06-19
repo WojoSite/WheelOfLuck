@@ -6,19 +6,17 @@
   flex-flow: row wrap;
   height: auto;
   box-sizing: border-box;
-  margin: 10px;
-  background-color: green;
+  padding: 10px;
+  border-top: 1px solid gray;
   .guessed-letter-box{
     box-sizing: border-box;
     height: 40px;
     width: 40px;
     margin: 10px;
-    background-color: gray;
     text-align: center;
     .guessed-letter{
       margin: 0;
       line-height: 40px;
-      color: white;
       font-size: 20px;
     }
   }

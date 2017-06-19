@@ -132,8 +132,8 @@ $(document).ready(function($) {
       for (var i = 0; i < WheelofLuck.currentPhrase.length; i++) {
 
         if (WheelofLuck.currentPhrase[i] == " ") {
-          var phraseBdDiv = document.createElement("div");
-          phraseBdDiv.className = "phrase-space-div";
+          var phraseBdDiv = document.createElement("br");
+          // phraseBdDiv.className = "phrase-space-div";
           PhraseBdCont.appendChild(phraseBdDiv);
 
         } else {
@@ -183,7 +183,7 @@ $(document).ready(function($) {
       console.log("Do Turn Fired!");
       WheelofLuck.clearBoth();
       // display name and current round at top of gameplay div
-      $('#current-turn-name').html("Current Turn: " + WheelofLuck.currentContestant.name);
+      $('#current-turn-name').html("Turn: " + WheelofLuck.currentContestant.name);
       $('#round').html("Round: " + WheelofLuck.roundCounter);
       // listen for spin wheel click
     },
@@ -203,6 +203,8 @@ $(document).ready(function($) {
       }
     },
     spinWheel: function(){
+      $('#spin-btn').css({'transform' : 'rotate(720deg)'});
+
       console.log("Spin wheel fired!");
       // produce random number between 1 and 11
       var randomNumber = Math.floor((Math.random() * 13));

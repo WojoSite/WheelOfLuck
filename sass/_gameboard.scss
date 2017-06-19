@@ -5,6 +5,8 @@
   box-sizing: border-box;
   #contestants-container{
     position: relative;
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     height: auto;
     margin: 0px;
@@ -15,7 +17,7 @@
     .contestant{
       position: relative;
       height: 100px;
-      width: 250px;
+      width: 175px;
       padding: 0;
       margin: 10px;
       border: 1px solid black;
@@ -24,60 +26,166 @@
       .name{
         margin: 0;
         line-height: 50px;
-        font-size: 30px;
+        font-size: 35px;
+        border-bottom: 1px solid lightgray;
       }
       .pts{
         margin: 0;
         line-height: 50px;
-        font-size: 25px;
+        font-size: 30px;
       }
     }
   }
-  #gameplay-container{
+  #controller-container{
+    box-sizing: border-box;
+    display: flex;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    #left-side-controller{
+      position: relative;
+      box-sizing: border-box;
+      width: 50%;
+      margin: 10px;
+      border-right: 1px solid gray;
+      .display-item{
+        margin: 10px;
 
+      }
+      .display-name{
+        margin: 0;
+        font-size: 20px;
+      }
+
+      #current-turn{
+        display: inline-block;
+        float: left;
+      }
+      #round-box{
+        float: right;
+        display: inline-block;
+        #round{
+          color: red;
+        }
+      }
+      #spin-btn{
+        margin: 60px auto 0 auto;
+        height: 50px;
+        width: 300px;
+        background-color: white;
+        border-style: none;
+        border: 1px solid black;
+        outline: none;
+        text-align: center;
+        cursor: pointer;
+        &:hover{
+          background-color: gray;
+        }
+        &:active{
+          background-color: black;
+          color: white;
+        }
+        #spin-word{
+          margin: 0;
+          line-height: 50px;
+          font-size: 30px
+        }
+      }
+    }
+    #right-side-controller{
+      box-sizing: border-box;
+      width: 50%;
+      margin: 10px;
+      .letter-entry-container{
+        align-items: center;
+        .submits{
+          display: inline-block;
+          height: 40px;
+          width: 200px;
+          border: 1px solid black;
+          text-align: center;
+          cursor: pointer;
+          &:hover{
+            background-color: gray;
+          }
+          &:active{
+            background-color: black;
+            color: white;
+          }
+          .submits-text{
+            margin: 0;
+            line-height: 40px;
+          }
+        }
+        .inputs{
+          height:40px;
+          width: 70px;
+        }
+        #solve-input{
+          height: 40px;
+          width: 200px;
+        }
+        #solve-puzzle{
+          display: inline-block;
+          height: 40px;
+          width: 100px;
+          border: 1px solid black;
+          text-align: center;
+          cursor: pointer;
+          &:hover{
+            background-color: gray;
+          }
+          &:active{
+            background-color: black;
+            color: white;
+          }
+          #solve-text{
+            margin: 0;
+            line-height: 40px;
+          }
+        }
+      }
+    }
   }
   #phrase-hint-container{
     position: relative;
     box-sizing: border-box;
-    background-color: green;
-    margin: 10px;
     height: auto;
     text-align: center;
     #phrase-hint{
       margin: 0;
-      line-height: 80px;
+      line-height: 50px;
     }
   }
   #phrase-board-container{
     position: relative;
-    display: flex;
+    padding: 10px;
+    // display: flex;
+    text-align: center;
     flex-flow: row wrap;
     height: auto;
     box-sizing: border-box;
-    margin: 10px;
-    background-color: lightblue;
     .phrase-letter-div{
+      display: inline-block;
       box-sizing: border-box;
-      height: 80px;
-      width: 80px;
-      margin: 10px;
-      background-color: red;
+      height: 60px;
+      width: 60px;
+      margin: 5px;
       text-align: center;
       border-bottom: 3px solid black;
       .letter{
         margin: 0;
-        line-height: 80px;
-        color: white;
-        font-size: 40px;
+        line-height: 60px;
+        color: black;
+        font-size: 35px;
       }
     }
-    .phrase-space-div{
-      box-sizing: border-box;
-      height: 80px;
-      width: 80px;
-      margin: 10px;
-      background-color: white;
-      text-align: center;
-    }
+    // .phrase-space-div{
+    //   box-sizing: border-box;
+    //   height: 80px;
+    //   width: 80px;
+    //   margin: 10px;
+    //   background-color: white;
+    //   text-align: center;
+    // }
   }
 }
