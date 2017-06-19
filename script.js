@@ -302,13 +302,14 @@ $(document).ready(function($) {
       // if current guessed letter is in the vowels array
       if ($.inArray(WheelofLuck.currentGuess, WheelofLuck.vowels) != -1){
           WheelofLuck.doTurn();
-      }
-      for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
-        if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
-          WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points += pointsAwarded;
-          var ptSelector = '#' +WheelofLuck.currentContestant.id + "pts";
-          $(ptSelector).html(WheelofLuck.contestantArray[i].points);
-          WheelofLuck.doTurn();
+      } else {
+        for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
+          if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id){
+            WheelofLuck.contestantArray[i].points = WheelofLuck.contestantArray[i].points += pointsAwarded;
+            var ptSelector = '#' +WheelofLuck.currentContestant.id + "pts";
+            $(ptSelector).html(WheelofLuck.contestantArray[i].points);
+            WheelofLuck.doTurn();
+          }
         }
       }
     },
@@ -372,7 +373,7 @@ $(document).ready(function($) {
           $('#spin-result').html('');
           WheelofLuck.multiplier = [];
           WheelofLuck.currentSpinVal = null;
-      
+
           $('#consonant-submit').off('click');
           return false
     }
