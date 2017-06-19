@@ -2,5 +2,31 @@
 
 #header{
   box-sizing: border-box;
-  margin: 10px;
+  height: 60px;
+  background-color: gray;
+  #logo{
+    float: left;
+  }
+  #logo-text{
+    margin: 0 0 0 10px;
+    line-height: 60px;
+    font-size: 25px;
+    color: white;
+  }
+  #newgame-btn{
+    margin: 15px;
+    height: 30px;
+    width: 100px;
+    float:right;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    &:hover{
+      background-color: gray;
+    }
+    &:active{
+      background-color: black;
+      color: white;
+    }
+  }
 }

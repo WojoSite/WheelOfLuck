@@ -9,7 +9,7 @@ $(document).ready(function($) {
     currentContestant: null,
     // ======== Phrase Object Array ========
     phraseArray: [
-      {phrase: "SEVENTH INNING STRETCH", hint: "Baseball Break", cateory: "Baseball"},
+      {phrase: "SEVENTH INNING STRETCH", hint: "Baseball Break"},
       {phrase: "SECRETARY OF STATE", hint: "Fourth in Line"},
       {phrase: "WEINER SCHNITZEL", hint: "A Little Vienna Cut"}
     ],
@@ -49,6 +49,7 @@ $(document).ready(function($) {
 
       // before firing:
         // If Contestants Array <= 3, tell user that there are already three players, and to click start game (or disable "add" or "submit" button)
+
       if (WheelofLuck.contestantArray.length == 3) {
         alert("You have added the maximum amount of players (3). Load your game!");
         //make add button disabled, too!
@@ -59,6 +60,7 @@ $(document).ready(function($) {
       var nameId = Math.floor(Math.random()*100000+1);
       var nextContestant = new WheelofLuck.Contestant(userNameInput, nameId);
       // Fire Clear Construtor method
+      $('#load-game-btn').css('display', 'block');
       WheelofLuck.clearForm();
       WheelofLuck.displayContestantAmt();
       }
@@ -66,6 +68,12 @@ $(document).ready(function($) {
     // display # of contestants added.
     displayContestantAmt: function(){
       $('#added-contestants').html("Contestants: " + WheelofLuck.contestantArray.length);
+      var contestantDiv = document.getElementById("added-contestants-container");
+      var addedContestant = WheelofLuck.contestantArray[WheelofLuck.contestantArray.length-1];
+      var nameP = document.createElement("p");
+      nameP.className = "added-contestant";
+      nameP.innerHTML = addedContestant.name;
+      contestantDiv.appendChild(nameP);
     },
      // If the Contestants Array = 0, ask user to enter at least one contestant to play (or disable "add" or "submit" button)
     zeroContestantCheck: function(){

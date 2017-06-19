@@ -3,4 +3,58 @@
 #start-game-container{
   box-sizing: border-box;
   margin: 10px;
+  clear:both;
+  #welcome-holder{
+    text-align: center;
+    #welcome{
+      margin: 0;
+    }
+  }
+  #rules-description{
+    height: auto;
+    width: 400px;
+    margin: 10px auto;
+    padding-left: 80px;
+  }
+  #add-player-container{
+    height: auto;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    #name-input{
+      height: 30px;
+      margin: 5px;
+      width: 200px;
+      font-size: 16px;
+      border-style: none;
+      border-bottom: 1px solid black;
+      outline: none;
+    }
+    .start-screen-btn{
+      display: block;
+      margin: 5px auto;
+      height: 30px;
+      width: 200px;
+      background-color: white;
+      border-style: none;
+      border: 1px solid black;
+      outline: none;
+      &:hover{
+        background-color: gray;
+      }
+      &:active{
+        background-color: black;
+        color: white;
+      }
+    }
+    #added-contestants-container{
+      align-items: center;
+      #added-contestants{
+        text-align: center;
+      }
+    }
+    #load-game-btn{
+      display: none;
+    }
+  }
 }
