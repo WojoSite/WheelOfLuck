@@ -203,8 +203,6 @@ $(document).ready(function($) {
       }
     },
     spinWheel: function(){
-      $('#spin-btn').css({'transform' : 'rotate(720deg)'});
-
       console.log("Spin wheel fired!");
       // produce random number between 1 and 11
       var randomNumber = Math.floor((Math.random() * 13));
@@ -228,13 +226,6 @@ $(document).ready(function($) {
         $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
         // make button live when enabled (add class)
       }
-      //add vowel subit listener only if contestant has more than 1 or more pts
-      for (var i = 0; i < WheelofLuck.contestantArray.length; i++){
-        if (WheelofLuck.contestantArray[i].id == WheelofLuck.currentContestant.id && WheelofLuck.contestantArray[i].points > 0){
-            console.log("Make vowel button appear");
-            // make button appear (add class?)
-          }
-        }
     },
     buyVowel: function(){
       console.log("Buy vowel click success");
