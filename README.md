@@ -3,7 +3,5 @@
 <h2>Additional Functionality Desired:</h2>
 <ul>
   <li>Responsive design</li>
-  <li>Bankrupt removes all points</li>
-  <li>Vowel entry functionality</li>
   <li>Phrase shows on successful solve</li>
 </ul>

@@ -363,6 +363,7 @@ $(document).ready(function($) {
       // get value of solve-input
       if (solveGuess == WheelofLuck.currentPhrase.toUpperCase()){
         alert("Correct! You win!");
+
       } else {
         alert("Sorry, that is incorrect. Next player's turn!");
         WheelofLuck.nextContestant();
