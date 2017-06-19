@@ -372,7 +372,7 @@ $(document).ready(function($) {
           $('#spin-result').html('');
           WheelofLuck.multiplier = [];
           WheelofLuck.currentSpinVal = null;
-          $('#vowel-submit').off('click');
+      
           $('#consonant-submit').off('click');
           return false
     }
