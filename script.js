@@ -15,7 +15,7 @@ $(document).ready(function($) {
     ],
     currentPhrase: null,
     // ======== Wheel Object Array ======== Holds objects representing wheel pieces and corresponding pt values
-    wheel: [1,1,1,2,2,2,3,3,4,4,5,"Lose Turn", "Bankrupt"],
+    wheel: [1,1,1,1,1,1,2,2,2,2,2,3,3,3,3,4,4,4,5,5,"Lose Turn", "Bankrupt"],
     consonants: ["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"],
     vowels: ["A","E","I","O","U"],
     currentGuess: null,
@@ -190,7 +190,7 @@ $(document).ready(function($) {
     roundCheck: function(){
       // stop game after 5 rounds
       if (WheelofLuck.roundCounter == 6){
-        if (WheelofLuck.contestantArray.length = 1){
+        if (WheelofLuck.contestantArray.length == 1){
           alert("Since it's a solo game, you win!")
         } else {
           var contestant1Pts = WheelofLuck.contestantArray[0].points;
@@ -209,7 +209,7 @@ $(document).ready(function($) {
     spinWheel: function(){
       console.log("Spin wheel fired!");
       // produce random number between 1 and 11
-      var randomNumber = Math.floor((Math.random() * 13));
+      var randomNumber = Math.floor((Math.random() * 22));
 
       // grab the object in the Wheel Object Array whose index corresponds to the random number
       // place value in currentSpinVal

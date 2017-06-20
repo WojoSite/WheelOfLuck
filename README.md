@@ -4,4 +4,6 @@
 <ul>
   <li>Responsive design</li>
   <li>Phrase shows on successful solve</li>
+  <li>Disable right-side submit buttons until spin fires</li>
+
 </ul>
