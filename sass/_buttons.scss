@@ -1,0 +1,50 @@
+$primary-button-color: #3385ff;
+$primary-button-hover: #ff3333;
+$primary-button-active: #cc0000;
+$shadow: 0 2px 4px rgba(0,0,0,0.2);
+$primary-font: 'Roboto', sans-serif;
+
+.primary-btn{
+  box-sizing: border-box;
+  margin: 15px;
+  height: 30px;
+  width: 100px;
+  float:right;
+  border: 1px solid black;
+  box-shadow: $shadow;
+  background-color: $primary-button-color;
+  color: white;
+  cursor: pointer;
+  &:hover{
+    background-color: $primary-button-hover;
+  }
+  &:active{
+    background-color: $primary-button-active;
+  }
+}
+
+#spin-btn{
+  box-sizing: border-box;
+  margin: 50px auto 0 auto;
+  height: 50px;
+  width: 300px;
+  background-color: $primary-button-color;
+  border-style: none;
+  border: 1px solid black;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  box-shadow: $shadow;
+  &:hover{
+    background-color: $primary-button-hover;
+  }
+  &:active{
+    background-color: $primary-button-active;
+  }
+  #spin-word{
+    margin: 0;
+    line-height: 50px;
+    font-size: 30px
+  }
+}

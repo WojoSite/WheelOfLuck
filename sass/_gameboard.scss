@@ -1,8 +1,18 @@
-
+$primary-font: 'Roboto', sans-serif;
 
 #gameboard-container{
   display: none;
   box-sizing: border-box;
+  font-family: $primary-font;
+  #phrase-hint-container{
+    box-sizing: border-box;
+    height: auto;
+    text-align: center;
+    #phrase-hint{
+      margin: 10px;
+      font-size: 14px;
+    }
+  }
   #contestants-container{
     position: relative;
     display: flex;
@@ -16,23 +26,23 @@
     clear: both;
     .contestant{
       position: relative;
-      height: 100px;
-      width: 175px;
-      padding: 0;
+      height: 70px;
       margin: 10px;
       border: 1px solid black;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       text-align: center;
       .name{
         margin: 0;
-        line-height: 50px;
-        font-size: 35px;
+        padding: 2px;
+        line-height: 35px;
+        font-size: 25px;
         border-bottom: 1px solid lightgray;
       }
       .pts{
         margin: 0;
-        line-height: 50px;
-        font-size: 30px;
+        padding: 2px;
+        line-height: 35px;
+        font-size: 25px;
       }
     }
   }
@@ -64,41 +74,17 @@
         float: right;
         display: inline-block;
         #round{
-          color: red;
         }
       }
-      #spin-btn{
-        margin: 40px auto 0 auto;
-        height: 50px;
-        width: 300px;
-        background-color: white;
-        border-style: none;
-        border: 1px solid black;
-        outline: none;
-        text-align: center;
-        cursor: pointer;
-        &:hover{
-          background-color: gray;
-        }
-        &:active{
-          background-color: black;
-          color: white;
-        }
-        #spin-word{
-          margin: 0;
-          line-height: 50px;
-          font-size: 30px
-        }
-      }
-
       #spin-result-container{
         margin: 5px auto 0 auto;
         height: 50px;
         width: 300px;
-        background-color: white;
+        background-color: #0066ff;
         border-style: none;
         border: 1px solid black;
         text-align: center;
+        color: white;
         #spin-result{
           margin: 0;
           font-size: 30px;
@@ -161,37 +147,29 @@
       }
     }
   }
-  #phrase-hint-container{
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    text-align: center;
-    #phrase-hint{
-      margin: 0;
-      line-height: 50px;
-    }
-  }
   #phrase-board-container{
     position: relative;
-    padding: 10px;
+    padding: 0 10px 20px 10px;
     // display: flex;
     text-align: center;
     flex-flow: row wrap;
     height: auto;
     box-sizing: border-box;
+    border-bottom: 1px solid black;
     .phrase-letter-div{
       display: inline-block;
       box-sizing: border-box;
-      height: 60px;
-      width: 60px;
+      height: 20px;
+      width: 20px;
       margin: 5px;
+      padding-bottom: 5px;
       text-align: center;
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
       .letter{
         margin: 0;
-        line-height: 60px;
+        line-height: 20px;
         color: black;
-        font-size: 35px;
+        font-size: 16px;
       }
     }
     // .phrase-space-div{

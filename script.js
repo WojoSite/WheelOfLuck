@@ -42,7 +42,7 @@ $(document).ready(function($) {
       addBtn.addEventListener("click", WheelofLuck.zeroContestantCheck);
 
       // Start Game
-      var startBtn = document.getElementById('start-game');
+      var startBtn = document.getElementById('start-game-btn');
       startBtn.addEventListener("click", WheelofLuck.gamePlay);
     },
     addContestant: function(){
@@ -61,7 +61,6 @@ $(document).ready(function($) {
       var nextContestant = new WheelofLuck.Contestant(userNameInput, nameId);
       // Fire Clear Construtor method
       $('#load-game-btn').fadeIn();
-      $('#start-page-message').css('display', 'none');
       WheelofLuck.clearForm();
       WheelofLuck.displayContestantAmt();
       }
@@ -71,10 +70,10 @@ $(document).ready(function($) {
       $('#added-contestants').html("Contestants: " + WheelofLuck.contestantArray.length);
       var contestantDiv = document.getElementById("added-contestants-container");
       var addedContestant = WheelofLuck.contestantArray[WheelofLuck.contestantArray.length-1];
-      var nameP = document.createElement("p");
-      nameP.className = "added-contestant";
-      nameP.innerHTML = addedContestant.name;
-      contestantDiv.appendChild(nameP);
+      var nameH2 = document.createElement("h2");
+      nameH2.className = "added-contestant";
+      nameH2.innerHTML = addedContestant.name;
+      contestantDiv.appendChild(nameH2);
     },
      // If the Contestants Array = 0, ask user to enter at least one contestant to play (or disable "add" or "submit" button)
     zeroContestantCheck: function(){

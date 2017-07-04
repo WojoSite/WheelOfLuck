@@ -1,32 +1,44 @@
+$logo-font: 'Monoton', cursive;
+$header-button-color: #3385ff;
+$header-button-hover: #66a3ff;
+$header-button-active: #0066ff;
+$header-button-font: 'Open Sans', sans-serif;
+$shadow: 0 2px 4px rgba(0,0,0,0.2);
+
 
 
 #header{
   box-sizing: border-box;
-  height: 60px;
-  background-color: gray;
+  height: 50px;
+  border-bottom: 1px solid black; // DEV
   #logo{
     float: left;
   }
   #logo-text{
     margin: 0 0 0 10px;
-    line-height: 60px;
-    font-size: 25px;
-    color: white;
+    line-height: 50px;
+    font-size: 24px;
+    font-family: $logo-font;
   }
-  #newgame-btn{
-    margin: 15px;
+  #new-game-btn{
+    box-sizing: border-box;
+    margin: 10px;
     height: 30px;
     width: 100px;
     float:right;
     border: 1px solid black;
-    background-color: white;
+    border-radius: 2px;
+    box-shadow: $shadow;
+    background-color: $header-button-color;
+    color: white;
+    font-family: $header-button-font;
+    font-size: 14px;
     cursor: pointer;
     &:hover{
-      background-color: gray;
+      background-color: $header-button-hover;
     }
     &:active{
-      background-color: black;
-      color: white;
+      background-color: $header-button-active;
     }
   }
 }

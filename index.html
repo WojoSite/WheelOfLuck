@@ -3,59 +3,78 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HTML Template</title>
+    <title>Wheel of Luck</title>
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Monoton|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-
-    <!-- HEADER DIV -->
-    <div id="header">
-      <!-- LOGO -->
-      <div id="logo">
-        <p id="logo-text">Wheel of Luck</p>
+    <div id="app-container">
+      <!-- HEADER -->
+      <div id="header">
+        <div id="logo">
+          <p id="logo-text">Wheel of Luck</p>
+        </div>
+        <a href="index.html"><button id="new-game-btn">New Game</button></a>
       </div>
-      <!-- NEW GAME -->
-      <a href="index.html"><button id="newgame-btn">New Game</button></a>
+
+      <!-- START GAME CONTAINER (hides after submit)-->
+      <div id="load-game-container">
+        <!-- ADD CONTESTANTS FORM -->
+        <div id="add-player-container">
+          <p id="start-page-message">Enter up to 3 contestants to start:</p>
+          <form id="name-input-form">
+            <input id="name-input" type="text" name="" value="" placeholder="Enter Name">
+          </form>
+          <button class="load-btn" id="contestant-add-btn" type="button" name="button">Add Contestant</button>
+
+          <!-- LOAT GAME BUTTON -->
+          <button class="load-btn" id="load-game-btn" type="button" name="button">Load Game</button>
+
+          <div id="added-contestants-container">
+            <div id="added-contestants"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- START GAME CONTAINER -->
+      <div id="start-game-container">
+      <!-- RULES DESCRIPTION -->
+        <div id="rules-description">
+          <p>Rules:</p>
+          <ul>
+            <li>Solve the puzzle by guessing letters.</li>
+            <li>Spin the wheel for per-letter point value.</li>
+            <li>Watch out for bankrupt and lose turn pieces!</li>
+            <li>A vowel costs one point.</li>
+            <li>No points awarded for correct vowel guesses.</li>
+            <li>Guess the phrase correctly and win the game.</li>
+            <li>At the end of five rounds, the player with the highest point total wins.</li>
+            <li>Gameplay for 1-3 players.</li>
+          </ul>
+        </div>
+        <div id="start-game-btn">
+          <p id="start-game-btn-text">Start Game</p>
+        </div>
+    </div>
+
+    <!-- GAME BOARD CONTAINER (displays upon start button click)-->
+    <!-- <div id="gameboard-container"> -->
+      <!-- PHRASE HINT CONTAINER -->
+      <!-- <div id="phrase-hint-container"> -->
+        <!-- <p id="phrase-hint"></h2> -->
+      <!-- </div> -->
+      <!-- <div id="phrase-board-container"></div> -->
+      
+    </div>
+
     </div>
 
 
-    <!-- START GAME CONTAINER (hides after submit)-->
-    <div id="load-game-container">
-      <!-- WELCOME -->
-      <!-- ADD CONTESTANTS FORM -->
-      <div id="add-player-container">
-      <form id="name-input-form">
-        <input id="name-input" type="text" name="" value="" placeholder="Enter Name">
-      </form>
-      <button class="start-screen-btn" id="contestant-add-btn" type="button" name="button">Add Player</button>
 
-      <!-- LOAT GAME BUTTON -->
-      <button class="start-screen-btn" id="load-game-btn" type="button" name="button">Load Game</button>
-      <p id="start-page-message">Enter between 1 and 3 player names to start</p>
-      <div id="added-contestants-container">
-        <p id="added-contestants"></p>
-      </div>
-      </div>
-    </div>
 
-    <div id="start-game-container">
-    <!-- RULES DESCRIPTION -->
-      <div id="rules-description">
-        <p>Rules:</p>
-        <ul>
-          <li>Solve the puzzle by guessing letters.</li>
-          <li>Spin the wheel for per-letter point value.</li>
-          <li>Watch out for bankrupt and lose turn pieces!</li>
-          <li>A vowel costs one point.</li>
-          <li>No points awarded for correct vowel guesses.</li>
-          <li>Guess the phrase correctly and win the game.</li>
-          <li>At the end of five rounds, the player with the highest point total wins.</li>
-          <li>Gameplay for 1-3 players.</li>
-        </ul>
-      </div>
-      <button id="start-game" type="button" name="button">Start Game</button>
-  </div>
+
+
 
     <!-- GAME BOARD CONTAINER (displays upon start button click)-->
     <div id="gameboard-container">
@@ -78,7 +97,7 @@
             <p id="spin-word">Spin!</p>
           </div>
           <div id="spin-result-container">
-            <p id="spin-result"></p>
+            <p id="spin-result">...</p>
           </div>
         </div>
         <div id="right-side-controller">

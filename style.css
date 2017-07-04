@@ -1,87 +1,108 @@
 #header {
   box-sizing: border-box;
-  height: 60px;
-  background-color: gray; }
+  height: 50px;
+  border-bottom: 1px solid black; }
   #header #logo {
     float: left; }
   #header #logo-text {
     margin: 0 0 0 10px;
-    line-height: 60px;
-    font-size: 25px;
-    color: white; }
-  #header #newgame-btn {
-    margin: 15px;
+    line-height: 50px;
+    font-size: 24px;
+    font-family: "Monoton", cursive; }
+  #header #new-game-btn {
+    box-sizing: border-box;
+    margin: 10px;
     height: 30px;
     width: 100px;
     float: right;
     border: 1px solid black;
-    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #3385ff;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
     cursor: pointer; }
-    #header #newgame-btn:hover {
-      background-color: gray; }
-    #header #newgame-btn:active {
-      background-color: black;
-      color: white; }
-
-#start-game-container {
-  display: none; }
-  #start-game-container #rules-description {
-    float: left;
-    height: auto;
-    width: 400px;
-    margin: 10px auto;
-    padding-left: 100px; }
-  #start-game-container #start-game {
-    margin: 100px 0 0 60px;
-    height: 50px;
-    width: 200px;
-    border: 1px solid black;
-    background-color: white;
-    font-size: 20px;
-    cursor: pointer; }
-    #start-game-container #start-game:hover {
-      background-color: gray; }
-    #start-game-container #start-game:active {
-      background-color: black;
-      color: white; }
+    #header #new-game-btn:hover {
+      background-color: #66a3ff; }
+    #header #new-game-btn:active {
+      background-color: #0066ff; }
 
 #load-game-container {
   box-sizing: border-box;
-  margin: 10px;
-  clear: both; }
+  font-family: "Open Sans", sans-serif; }
   #load-game-container #add-player-container {
     height: auto;
     width: 300px;
     margin: auto;
     text-align: center; }
     #load-game-container #add-player-container #name-input {
-      height: 30px;
+      height: 40px;
       margin: 5px;
       width: 200px;
-      font-size: 16px;
+      font-size: 18px;
       border-style: none;
       border-bottom: 1px solid black;
-      outline: none; }
-    #load-game-container #add-player-container .start-screen-btn {
-      display: block;
+      outline: none;
+      text-align: center; }
+    #load-game-container #add-player-container .load-btn {
       margin: 5px auto;
-      height: 30px;
+      height: 40px;
       width: 200px;
-      background-color: white;
+      background-color: #3385ff;
       border-style: none;
       border: 1px solid black;
-      outline: none; }
-      #load-game-container #add-player-container .start-screen-btn:hover {
-        background-color: gray; }
-      #load-game-container #add-player-container .start-screen-btn:active {
-        background-color: black;
+      outline: none;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 18px;
+      cursor: pointer; }
+      #load-game-container #add-player-container .load-btn:hover {
+        background-color: #66a3ff; }
+      #load-game-container #add-player-container .load-btn:active {
+        background-color: #0066ff;
         color: white; }
     #load-game-container #add-player-container #added-contestants-container {
       align-items: center; }
       #load-game-container #add-player-container #added-contestants-container #added-contestants {
-        text-align: center; }
+        margin: 20px 0 0 0; }
+      #load-game-container #add-player-container #added-contestants-container .added-contestant {
+        margin: 0;
+        font-family: "Gochi Hand", cursive;
+        font-size: 50px; }
     #load-game-container #add-player-container #load-game-btn {
       display: none; }
+
+#start-game-container {
+  display: none;
+  align-items: center; }
+  #start-game-container #rules-description {
+    padding: 20px;
+    height: auto;
+    width: 300px;
+    margin: 10px auto;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px; }
+  #start-game-container #start-game-btn {
+    box-sizing: border-box;
+    height: 50px;
+    width: 200px;
+    margin: auto;
+    border: 1px solid black;
+    background-color: #3385ff;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: "Open Sans", sans-serif;
+    text-align: center; }
+    #start-game-container #start-game-btn:hover {
+      background-color: #66a3ff; }
+    #start-game-container #start-game-btn:active {
+      background-color: #0066ff; }
+    #start-game-container #start-game-btn #start-game-btn-text {
+      margin: 0;
+      line-height: 50px;
+      font-size: 20px;
+      color: white; }
 
 #gameplay-container {
   box-sizing: border-box;
@@ -90,7 +111,15 @@
 
 #gameboard-container {
   display: none;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif; }
+  #gameboard-container #phrase-hint-container {
+    box-sizing: border-box;
+    height: auto;
+    text-align: center; }
+    #gameboard-container #phrase-hint-container #phrase-hint {
+      margin: 10px;
+      font-size: 14px; }
   #gameboard-container #contestants-container {
     position: relative;
     display: flex;
@@ -104,22 +133,22 @@
     clear: both; }
     #gameboard-container #contestants-container .contestant {
       position: relative;
-      height: 100px;
-      width: 175px;
-      padding: 0;
+      height: 70px;
       margin: 10px;
       border: 1px solid black;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       text-align: center; }
       #gameboard-container #contestants-container .contestant .name {
         margin: 0;
-        line-height: 50px;
-        font-size: 35px;
+        padding: 2px;
+        line-height: 35px;
+        font-size: 25px;
         border-bottom: 1px solid lightgray; }
       #gameboard-container #contestants-container .contestant .pts {
         margin: 0;
-        line-height: 50px;
-        font-size: 30px; }
+        padding: 2px;
+        line-height: 35px;
+        font-size: 25px; }
   #gameboard-container #controller-container {
     box-sizing: border-box;
     display: flex;
@@ -142,35 +171,15 @@
       #gameboard-container #controller-container #left-side-controller #round-box {
         float: right;
         display: inline-block; }
-        #gameboard-container #controller-container #left-side-controller #round-box #round {
-          color: red; }
-      #gameboard-container #controller-container #left-side-controller #spin-btn {
-        margin: 40px auto 0 auto;
-        height: 50px;
-        width: 300px;
-        background-color: white;
-        border-style: none;
-        border: 1px solid black;
-        outline: none;
-        text-align: center;
-        cursor: pointer; }
-        #gameboard-container #controller-container #left-side-controller #spin-btn:hover {
-          background-color: gray; }
-        #gameboard-container #controller-container #left-side-controller #spin-btn:active {
-          background-color: black;
-          color: white; }
-        #gameboard-container #controller-container #left-side-controller #spin-btn #spin-word {
-          margin: 0;
-          line-height: 50px;
-          font-size: 30px; }
       #gameboard-container #controller-container #left-side-controller #spin-result-container {
         margin: 5px auto 0 auto;
         height: 50px;
         width: 300px;
-        background-color: white;
+        background-color: #0066ff;
         border-style: none;
         border: 1px solid black;
-        text-align: center; }
+        text-align: center;
+        color: white; }
         #gameboard-container #controller-container #left-side-controller #spin-result-container #spin-result {
           margin: 0;
           font-size: 30px;
@@ -217,34 +226,28 @@
           #gameboard-container #controller-container #right-side-controller .letter-entry-container #solve-puzzle #solve-text {
             margin: 0;
             line-height: 40px; }
-  #gameboard-container #phrase-hint-container {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    text-align: center; }
-    #gameboard-container #phrase-hint-container #phrase-hint {
-      margin: 0;
-      line-height: 50px; }
   #gameboard-container #phrase-board-container {
     position: relative;
-    padding: 10px;
+    padding: 0 10px 20px 10px;
     text-align: center;
     flex-flow: row wrap;
     height: auto;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    border-bottom: 1px solid black; }
     #gameboard-container #phrase-board-container .phrase-letter-div {
       display: inline-block;
       box-sizing: border-box;
-      height: 60px;
-      width: 60px;
+      height: 20px;
+      width: 20px;
       margin: 5px;
+      padding-bottom: 5px;
       text-align: center;
-      border-bottom: 3px solid black; }
+      border-bottom: 2px solid black; }
       #gameboard-container #phrase-board-container .phrase-letter-div .letter {
         margin: 0;
-        line-height: 60px;
+        line-height: 20px;
         color: black;
-        font-size: 35px; }
+        font-size: 16px; }
 
 #guessed-letters-container {
   position: relative;
@@ -265,8 +268,53 @@
       line-height: 40px;
       font-size: 20px; }
 
+.primary-btn {
+  box-sizing: border-box;
+  margin: 15px;
+  height: 30px;
+  width: 100px;
+  float: right;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #3385ff;
+  color: white;
+  cursor: pointer; }
+  .primary-btn:hover {
+    background-color: #ff3333; }
+  .primary-btn:active {
+    background-color: #cc0000; }
+
+#spin-btn {
+  box-sizing: border-box;
+  margin: 50px auto 0 auto;
+  height: 50px;
+  width: 300px;
+  background-color: #3385ff;
+  border-style: none;
+  border: 1px solid black;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+  #spin-btn:hover {
+    background-color: #ff3333; }
+  #spin-btn:active {
+    background-color: #cc0000; }
+  #spin-btn #spin-word {
+    margin: 0;
+    line-height: 50px;
+    font-size: 30px; }
+
 body {
   box-sizing: border-box;
   margin: 0; }
+  body #app-container {
+    box-sizing: border-box;
+    margin: 20px auto;
+    width: 350px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 2px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,8 +4,17 @@
 @import 'gameplay';
 @import 'gameboard';
 @import 'guesses';
+@import 'buttons';
 
 body{
   box-sizing: border-box;
   margin: 0;
+  #app-container{
+    box-sizing: border-box;
+    margin: 20px auto;
+    width: 350px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 2px;
+  }
 }

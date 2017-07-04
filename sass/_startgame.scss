@@ -1,48 +1,42 @@
+$start-button-font: 'Open Sans', sans-serif;
+$primary-font: 'Roboto', sans-serif;
+$start-button-color: #3385ff;
+$start-button-hover: #66a3ff;
+$start-button-active: #0066ff;
 
-
-#load-game-container{
-  box-sizing: border-box;
-  margin: 10px;
-  clear:both;
-  #add-player-container{
+#start-game-container{
+  display: none;
+  align-items: center;
+  #rules-description{
+    padding: 20px;
     height: auto;
     width: 300px;
+    margin: 10px auto;
+    font-family: $primary-font;
+    font-size: 14px;
+  }
+  #start-game-btn{
+    box-sizing: border-box;
+    height: 50px;
+    width: 200px;
     margin: auto;
+    border: 1px solid black;
+    background-color: $start-button-color;
+    cursor: pointer;
+    box-shadow: $shadow;
+    font-family: $start-button-font;
     text-align: center;
-    #name-input{
-      height: 30px;
-      margin: 5px;
-      width: 200px;
-      font-size: 16px;
-      border-style: none;
-      border-bottom: 1px solid black;
-      outline: none;
+    &:hover{
+      background-color: $start-button-hover;
     }
-    .start-screen-btn{
-      display: block;
-      margin: 5px auto;
-      height: 30px;
-      width: 200px;
-      background-color: white;
-      border-style: none;
-      border: 1px solid black;
-      outline: none;
-      &:hover{
-        background-color: gray;
-      }
-      &:active{
-        background-color: black;
-        color: white;
-      }
+    &:active{
+      background-color: $start-button-active;
     }
-    #added-contestants-container{
-      align-items: center;
-      #added-contestants{
-        text-align: center;
-      }
-    }
-    #load-game-btn{
-      display: none;
+    #start-game-btn-text{
+      margin: 0;
+      line-height: 50px;
+      font-size: 20px;
+      color: white;
     }
   }
 }
