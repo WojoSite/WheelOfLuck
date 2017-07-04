@@ -24,9 +24,9 @@
       <div id="load-game-container">
         <!-- ADD CONTESTANTS FORM -->
         <div id="add-player-container">
-          <p id="start-page-message">Enter up to 3 contestants to start:</p>
+          <p id="start-page-message">Enter up to 3 contestants to start</p>
           <form id="name-input-form">
-            <input id="name-input" type="text" name="" value="" placeholder="Enter Name">
+            <input id="name-input" type="text" name="" value="" maxlength="12" placeholder="Enter Name">
           </form>
           <button class="load-btn" id="contestant-add-btn" type="button" name="button">Add Contestant</button>
 
@@ -59,49 +59,82 @@
           <p id="start-game-btn-text">Start Game</p>
         </div>
     </div>
-
-    <!-- GAME BOARD CONTAINER (displays upon start button click)-->
-    <!-- <div id="gameboard-container"> -->
-      <!-- PHRASE HINT CONTAINER -->
-      <!-- <div id="phrase-hint-container"> -->
-        <!-- <p id="phrase-hint"></h2> -->
-      <!-- </div> -->
-      <!-- <div id="phrase-board-container"></div> -->
-
-    </div>
-
-    </div>
-
-
-
-
-
-
-
-    <!-- GAME BOARD CONTAINER (displays upon start button click)-->
     <div id="gameboard-container">
 
-      <!-- CONTESTANTS CONTAINER: flexbox -->
-
-      <div id="contestants-container">
-        <table id="contestants-table">
-          <tr class="table-row">
-            <th class="table-header">Contestants</th>
-            <th class="table-header">Pts</th>
-          </tr>
-        </table>
+      <div id="phrase-hint-container">
+        <p id="phrase-hint"></h2>
       </div>
+       <div id="phrase-board-container"></div>
+
+       <div id="turn-round-display-container">
+         <div id="turn-round-display-wrapper">
+           <div class="current-turn">
+             <p id="current-turn-name"></p>
+           </div>
+           <div class="round-item">
+             <p id="round"></p>
+           </div>
+         </div>
+       </div>
+       <div id="contestants-spin-container">
+         <div id="contestants-container">
+           <table id="contestants-table">
+             <tr class="table-row">
+               <th class="table-header">Contestants</th>
+               <th class="table-header">Pts</th>
+             </tr>
+           </table>
+         </div>
+         <div id="spin-container">
+           <div id="spin-btn">
+             <p id="spin-word">Spin!</p>
+           </div>
+           <div id="spin-result-container">
+             <p id="spin-result">...</p>
+           </div>
+         </div>
+       </div>
+
+    </div>
+  </div>
+
+<!-- ==================old================== -->
+    <div id="gameboard-container">
+
+      <div id="turn-round-display-container">
+        <div id="turn-round-display-wrapper">
+          <div class="display-item">
+            <p id="current-turn-name"></p>
+          </div>
+          <div class="display-item">
+            <p id="round"></p>
+          </div>
+        </div>
+      </div>
+      <div id="contestants-spin-container">
+        <div id="contestants-container">
+          <table id="contestants-table">
+            <tr class="table-row">
+              <th class="table-header">Contestants</th>
+              <th class="table-header">Pts</th>
+            </tr>
+          </table>
+        </div>
+        <div id="spin-container">
+          <div id="spin-btn">
+            <p id="spin-word">Spin!</p>
+          </div>
+          <div id="spin-result-container">
+            <p id="spin-result">...</p>
+          </div>
+        </div>
+      </div>
+
 
       <div id="controller-container">
         <div id="left-side-controller">
           <!-- Display current contestant -->
-          <div class="display-item" id="current-turn">
-            <p class="display-name" id="current-turn-name"></p>
-          </div>
-          <!-- Display current round -->
-          <div class="display-item" id="round-box">
-            <p class="display-name" id="round"></p>
-          </div>
+
           <!-- Spin button -->
           <div id="spin-btn">
             <p id="spin-word">Spin!</p>

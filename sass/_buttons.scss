@@ -22,29 +22,3 @@ $primary-font: 'Roboto', sans-serif;
     background-color: $primary-button-active;
   }
 }
-
-#spin-btn{
-  box-sizing: border-box;
-  margin: 50px auto 0 auto;
-  height: 50px;
-  width: 300px;
-  background-color: $primary-button-color;
-  border-style: none;
-  border: 1px solid black;
-  outline: none;
-  text-align: center;
-  cursor: pointer;
-  color: white;
-  box-shadow: $shadow;
-  &:hover{
-    background-color: $primary-button-hover;
-  }
-  &:active{
-    background-color: $primary-button-active;
-  }
-  #spin-word{
-    margin: 0;
-    line-height: 50px;
-    font-size: 30px
-  }
-}

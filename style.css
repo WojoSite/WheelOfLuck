@@ -120,34 +120,75 @@
     #gameboard-container #phrase-hint-container #phrase-hint {
       margin: 10px;
       font-size: 14px; }
-  #gameboard-container #contestants-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    height: auto;
-    margin: 0px;
-    padding: 10px;
-    clear: both; }
-    #gameboard-container #contestants-container .contestant {
-      position: relative;
-      height: 70px;
-      margin: 10px;
+  #gameboard-container #turn-round-display-container {
+    width: 100%; }
+    #gameboard-container #turn-round-display-container #turn-round-display-wrapper {
+      width: 348px;
+      margin: 10px auto; }
+      #gameboard-container #turn-round-display-container #turn-round-display-wrapper .current-turn {
+        float: left;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 160px;
+        margin: 5px;
+        text-align: right; }
+        #gameboard-container #turn-round-display-container #turn-round-display-wrapper .current-turn #current-turn-name {
+          margin: 0; }
+      #gameboard-container #turn-round-display-container #turn-round-display-wrapper .round-item {
+        float: right;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 160px;
+        margin: 5px;
+        text-align: left; }
+        #gameboard-container #turn-round-display-container #turn-round-display-wrapper .round-item #round {
+          margin: 0; }
+  #gameboard-container #contestants-spin-container #contestants-container {
+    display: inline-block;
+    float: left;
+    padding: 10px; }
+    #gameboard-container #contestants-spin-container #contestants-container #contestants-table {
+      width: 160px;
       border: 1px solid black;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      text-align: center; }
-      #gameboard-container #contestants-container .contestant .name {
+      border-collapse: collapse; }
+      #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row {
+        text-align: center; }
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row .table-header {
+          border: 1px solid black;
+          border-collapse: collapse; }
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row .contestant-name {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding: 3px 0; }
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row .pts {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding: 3px 0; }
+  #gameboard-container #contestants-spin-container #spin-container {
+    display: inline-block;
+    float: right;
+    padding: 0 20px; }
+    #gameboard-container #contestants-spin-container #spin-container #spin-btn {
+      box-sizing: border-box;
+      height: 110px;
+      width: 110px;
+      background-color: #3385ff;
+      border: 1px solid black;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+      #gameboard-container #contestants-spin-container #spin-container #spin-btn:hover {
+        background-color: #ff3333; }
+      #gameboard-container #contestants-spin-container #spin-container #spin-btn:active {
+        background-color: #cc0000; }
+      #gameboard-container #contestants-spin-container #spin-container #spin-btn #spin-word {
         margin: 0;
-        padding: 2px;
-        line-height: 35px;
-        font-size: 25px;
-        border-bottom: 1px solid lightgray; }
-      #gameboard-container #contestants-container .contestant .pts {
-        margin: 0;
-        padding: 2px;
-        line-height: 35px;
-        font-size: 25px; }
+        line-height: 110px;
+        font-size: 24px; }
   #gameboard-container #controller-container {
+    clear: both;
     box-sizing: border-box;
     display: flex;
     border-top: 1px solid gray;
@@ -158,30 +199,6 @@
       width: 50%;
       margin: 10px;
       border-right: 1px solid gray; }
-      #gameboard-container #controller-container #left-side-controller .display-item {
-        margin: 10px; }
-      #gameboard-container #controller-container #left-side-controller .display-name {
-        margin: 0;
-        font-size: 20px; }
-      #gameboard-container #controller-container #left-side-controller #current-turn {
-        display: inline-block;
-        float: left; }
-      #gameboard-container #controller-container #left-side-controller #round-box {
-        float: right;
-        display: inline-block; }
-      #gameboard-container #controller-container #left-side-controller #spin-result-container {
-        margin: 5px auto 0 auto;
-        height: 50px;
-        width: 300px;
-        background-color: #0066ff;
-        border-style: none;
-        border: 1px solid black;
-        text-align: center;
-        color: white; }
-        #gameboard-container #controller-container #left-side-controller #spin-result-container #spin-result {
-          margin: 0;
-          font-size: 30px;
-          line-height: 50px; }
     #gameboard-container #controller-container #right-side-controller {
       box-sizing: border-box;
       width: 50%;
@@ -281,28 +298,6 @@
     background-color: #ff3333; }
   .primary-btn:active {
     background-color: #cc0000; }
-
-#spin-btn {
-  box-sizing: border-box;
-  margin: 50px auto 0 auto;
-  height: 50px;
-  width: 300px;
-  background-color: #3385ff;
-  border-style: none;
-  border: 1px solid black;
-  outline: none;
-  text-align: center;
-  cursor: pointer;
-  color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
-  #spin-btn:hover {
-    background-color: #ff3333; }
-  #spin-btn:active {
-    background-color: #cc0000; }
-  #spin-btn #spin-word {
-    margin: 0;
-    line-height: 50px;
-    font-size: 30px; }
 
 body {
   box-sizing: border-box;
