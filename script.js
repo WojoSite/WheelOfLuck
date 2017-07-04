@@ -93,28 +93,47 @@ $(document).ready(function($) {
       var contestantsContainer = document.getElementById('contestants-container');
 
       for (var i = 0; i < WheelofLuck.contestantArray.length; i++) {
-        var contestantDiv = document.createElement("div");
-        contestantDiv.className = "contestant";
-        contestantDiv.setAttribute('id', WheelofLuck.contestantArray[i].id);
 
-        var nameDiv = document.createElement("div");
-        nameDiv.className = "contestant-name";
-        var nameP = document.createElement("p");
-        nameP.className = "name";
-        nameP.innerHTML = WheelofLuck.contestantArray[i].name;
+        var contestantTable = document.getElementById('contestants-table');
 
-        var ptsDiv = document.createElement("div");
-        ptsDiv.className = "contestant-points";
-        var ptsP = document.createElement("p");
-        ptsP.className = "pts";
-        ptsP.innerHTML = WheelofLuck.contestantArray[i].points;
-        ptsP.setAttribute('id', WheelofLuck.contestantArray[i].id + "pts");
+        var tableRow = document.createElement("tr");
+        tableRow.className = "table-row";
 
-        nameDiv.appendChild(nameP);
-        ptsDiv.appendChild(ptsP);
-        contestantDiv.appendChild(nameDiv);
-        contestantDiv.appendChild(ptsDiv);
-        contestantsContainer.appendChild(contestantDiv);
+        var contestantTd = document.createElement("td");
+        contestantTd.className = "contestant-name";
+        contestantTd.innerHTML = WheelofLuck.contestantArray[i].name;
+
+        var contestantPts = document.createElement("td");
+        contestantPts.className = "pts";
+        contestantPts.innerHTML = WheelofLuck.contestantArray[i].points;
+        contestantPts.setAttribute('id', WheelofLuck.contestantArray[i].id + "pts");
+
+        tableRow.appendChild(contestantTd);
+        tableRow.appendChild(contestantPts);
+        contestantTable.appendChild(tableRow);
+
+        // var contestantDiv = document.createElement("div");
+        // contestantDiv.className = "contestant";
+        // contestantDiv.setAttribute('id', WheelofLuck.contestantArray[i].id);
+        //
+        // var nameDiv = document.createElement("div");
+        // nameDiv.className = "contestant-name";
+        // var nameP = document.createElement("p");
+        // nameP.className = "name";
+        // nameP.innerHTML = WheelofLuck.contestantArray[i].name;
+        //
+        // var ptsDiv = document.createElement("div");
+        // ptsDiv.className = "contestant-points";
+        // var ptsP = document.createElement("p");
+        // ptsP.className = "pts";
+        // ptsP.innerHTML = WheelofLuck.contestantArray[i].points;
+        // ptsP.setAttribute('id', WheelofLuck.contestantArray[i].id + "pts");
+        //
+        // nameDiv.appendChild(nameP);
+        // ptsDiv.appendChild(ptsP);
+        // contestantDiv.appendChild(nameDiv);
+        // contestantDiv.appendChild(ptsDiv);
+        // contestantsContainer.appendChild(contestantDiv);
       }
 
       // Randomly select object from Phrase Object Array

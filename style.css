@@ -128,8 +128,6 @@
     height: auto;
     margin: 0px;
     padding: 10px;
-    display: flex;
-    flex-flow: row wrap;
     clear: both; }
     #gameboard-container #contestants-container .contestant {
       position: relative;
@@ -309,6 +307,21 @@
 body {
   box-sizing: border-box;
   margin: 0; }
+  body #contestants-table {
+    width: 200px;
+    border: 1px solid black;
+    border-collapse: collapse; }
+    body #contestants-table .table-row {
+      text-align: center; }
+      body #contestants-table .table-row .table-header {
+        border: 1px solid black;
+        border-collapse: collapse; }
+      body #contestants-table .table-row .contestant-name {
+        border: 1px solid black;
+        border-collapse: collapse; }
+      body #contestants-table .table-row .pts {
+        border: 1px solid black;
+        border-collapse: collapse; }
   body #app-container {
     box-sizing: border-box;
     margin: 20px auto;
