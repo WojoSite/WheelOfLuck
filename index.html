@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wheel of Luck</title>
+    <link rel="icon" href="images/wof.png">
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Monoton|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -24,7 +25,7 @@
       <div id="load-game-container">
         <!-- ADD CONTESTANTS FORM -->
         <div id="add-player-container">
-          <p id="start-page-message">Enter up to 3 contestants to start</p>
+          <p id="start-page-message">Enter up to 3 contestants to start (12 characters max):</p>
           <form id="name-input-form">
             <input id="name-input" type="text" name="" value="" maxlength="12" placeholder="Enter Name">
           </form>
@@ -58,15 +59,13 @@
         <div id="start-game-btn">
           <p id="start-game-btn-text">Start Game</p>
         </div>
-    </div>
-    <div id="gameboard-container">
-
-      <div id="phrase-hint-container">
-        <p id="phrase-hint"></h2>
       </div>
-       <div id="phrase-board-container"></div>
-
-       <div id="turn-round-display-container">
+      <div id="gameboard-container">
+        <div id="phrase-hint-container">
+          <p id="phrase-hint"></h2>
+        </div>
+        <div id="phrase-board-container"></div>
+        <div id="turn-round-display-container">
          <div id="turn-round-display-wrapper">
            <div class="current-turn">
              <p id="current-turn-name"></p>
@@ -94,9 +93,41 @@
            </div>
          </div>
        </div>
+       <div id="letter-solve-container">
 
+          <div class="input-container">
+           <input class="inputs" id="consonant-input" type="text" name="" value="" placeholder="Consonant">
+           <button class="submits" id="consonant-submit">
+             <p class="submits-text">Consonant Guess</p>
+           </button>
+          </div>
+          <div class="input-container">
+           <input class="inputs" class="inputs" id="vowel-input" type="text" name="" value="" placeholder="Vowel">
+           <button class="submits" id="vowel-submit">
+             <p class="submits-text">Buy Vowel</p>
+           </button>
+          </div>
+          <div class="input-container">
+           <input id="solve-input" type="text" name="" value="" placeholder="Solve Puzzle">
+           <button id="solve-puzzle">
+             <p id="solve-text">Solve Puzzle</p>
+           </button>
+          </div>
+       </div>
+         <div id="guessed-letters-container">
+           <p id="guessed-header">Guessed Letters:</p>
+         </div>
+      </div>
+      <div id="footer">
+        <div id="website-container">
+          <a href="http://mattwojtkun.com/" id="website">&copy; mattwojtkun.com 2017</a>
+        </div>
+        <a href="https://github.com/WojoSite/MSW_JSCapstone" target="_blank">
+            <img id="github-icon" src="images/github.png" alt="Github">
+        </a>
+      </div>
     </div>
-  </div>
+
 
 <!-- ==================old================== -->
     <div id="gameboard-container">

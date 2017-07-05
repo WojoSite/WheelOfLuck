@@ -13,6 +13,10 @@ $contestant-font: 'Gochi Hand', cursive;
     width: 300px;
     margin: auto;
     text-align: center;
+    #start-page-message{
+      font-size: 10px;
+      font-style: italic;
+    }
     #name-input{
       height: 40px;
       margin: 5px;
