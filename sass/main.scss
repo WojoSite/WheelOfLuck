@@ -5,7 +5,8 @@
 @import 'gameboard';
 @import 'guesses';
 @import 'footer';
-
+@import 'modals';
+$gameboard-bg-color: #808080;
 body{
   box-sizing: border-box;
   margin: 0;
@@ -16,6 +17,8 @@ body{
     width: 350px;
     height: 600px;
     border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: $gameboard-bg-color;
   }
 }

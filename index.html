@@ -5,44 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wheel of Luck</title>
     <link rel="icon" href="images/wof.png">
-    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Monoton|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Bungee+Shade|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
-
   <body>
-
-
     <div id="app-container">
-      <!-- HEADER -->
+      <div class="spin-modal-bg">
+        <div class="modal-box">
+          <h3 id="spin-result-text"></h3>
+          <p id="spin-result-message"></p>
+        </div>
+      </div>
+
+      <div class="consonant-modal-bg">
+        <div class="modal-box">
+          <span class="closer" id="consonant-closer">X</span>
+          <div class= "letter-guess-container" id="consonant-guess-container">
+            <input class="modal-input" id="consonant-input" type="text" name="" value="">
+            <button class="modal-submit" id="consonant-submit">Guess Consonant!</button>
+          </div>
+        </div>
+      </div>
+      <div class="vowel-modal-bg">
+        <div class="modal-box">
+          <span class="closer" id="vowel-closer">X</span>
+          <div class= "letter-guess-container" id="vowel-guess-container">
+            <input class="modal-input" id="vowel-input" type="text" name="" value="">
+            <button class="modal-submit" id="vowel-submit">Buy Vowel!</button>
+          </div>
+        </div>
+      </div>
+      <div class="solve-modal-bg">
+        <div class="modal-box">
+          <span class="closer" id="solve-closer">X</span>
+          <div class= "letter-guess-container" id="solve-guess-container">
+            <input class="modal-input" id="solve-input" type="text" name="" value="">
+            <button class="modal-submit" id="solve-submit">Solve Puzzle!</button>
+          </div>
+        </div>
+      </div>
+      <div class="msg-modal-bg">
+        <div class="modal-box">
+          <p id="message"></p>
+        </div>
+      </div>
       <div id="header">
         <div id="logo">
           <p id="logo-text">Wheel of Luck</p>
         </div>
         <a href="index.html"><button id="new-game-btn">New Game</button></a>
       </div>
-
-      <!-- START GAME CONTAINER (hides after submit)-->
       <div id="load-game-container">
-        <!-- ADD CONTESTANTS FORM -->
         <div id="add-player-container">
           <p id="start-page-message">Enter up to 3 contestants to start (12 characters max):</p>
           <form id="name-input-form">
             <input id="name-input" type="text" name="" value="" maxlength="12" placeholder="Enter Name">
           </form>
           <button class="load-btn" id="contestant-add-btn" type="button" name="button">Add Contestant</button>
-
-          <!-- LOAT GAME BUTTON -->
           <button class="load-btn" id="load-game-btn" type="button" name="button">Load Game</button>
-
           <div id="added-contestants-container">
             <div id="added-contestants"></div>
           </div>
         </div>
       </div>
-
-      <!-- START GAME CONTAINER -->
       <div id="start-game-container">
-      <!-- RULES DESCRIPTION -->
         <div id="rules-description">
           <p>Rules:</p>
           <ul>
@@ -68,10 +94,10 @@
         <div id="turn-round-display-container">
          <div id="turn-round-display-wrapper">
            <div class="current-turn">
-             <p id="current-turn-name"></p>
+             <p id="current-turn-name">Turn</p>
            </div>
            <div class="round-item">
-             <p id="round"></p>
+             <p id="round">Round</p>
            </div>
          </div>
        </div>
@@ -86,34 +112,29 @@
          </div>
          <div id="spin-container">
            <div id="spin-btn">
-             <p id="spin-word">Spin!</p>
-           </div>
-           <div id="spin-result-container">
-             <p id="spin-result">...</p>
+             <div id="spin-word-container">
+               <p id="spin-word">Spin!</p>
+             </div>
            </div>
          </div>
        </div>
-       <div id="letter-solve-container">
 
-          <div class="input-container">
-           <input class="inputs" id="consonant-input" type="text" name="" value="" placeholder="Consonant">
-           <button class="submits" id="consonant-submit">
-             <p class="submits-text">Consonant Guess</p>
-           </button>
-          </div>
-          <div class="input-container">
-           <input class="inputs" class="inputs" id="vowel-input" type="text" name="" value="" placeholder="Vowel">
-           <button class="submits" id="vowel-submit">
-             <p class="submits-text">Buy Vowel</p>
-           </button>
-          </div>
-          <div class="input-container">
-           <input id="solve-input" type="text" name="" value="" placeholder="Solve Puzzle">
-           <button id="solve-puzzle">
-             <p id="solve-text">Solve Puzzle</p>
-           </button>
-          </div>
+       <div id="letters-solve-container">
+         <div id="letters-container">
+           <div class="submits letter-submit" id="guess-consonant">
+             <p class="submits-text">Guess Consonant</p>
+           </div>
+           <div class="submits letter-submit" id="guess-vowel">
+             <p class="submits-text">Guess Vowel</p>
+           </div>
+         </div>
+         <div id="solve-container">
+           <div class="submits" id="solve-puzzle">
+             <p class="submits-text">Solve Puzzle</p>
+           </div>
+         </div>
        </div>
+
          <div id="guessed-letters-container">
            <p id="guessed-header">Guessed Letters:</p>
          </div>
@@ -127,8 +148,7 @@
         </a>
       </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>

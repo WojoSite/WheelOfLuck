@@ -1,0 +1,59 @@
+$primary-font: 'Open Sans', sans-serif;
+.spin-modal-bg, .consonant-modal-bg, .vowel-modal-bg, .solve-modal-bg, .msg-modal-bg{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  z-index: 2;
+  .modal-box{
+    position: relative;
+    box-sizing: border-box;
+    top: 100px;
+    height: 150px;
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+    border: 2px solid black;
+    border-radius: 4px;
+    text-align: center;
+  }
+}
+.closer{
+  float: right;
+  border: 2px solid black;
+  padding: 0 10px;
+  cursor: pointer;
+  font-family: $primary-font;
+}
+.letter-guess-container{
+  box-sizing: border-box;
+  height: 50px;
+  width: 200px;
+  margin: 40px auto;
+}
+.modal-input{
+  box-sizing: border-box;
+  clear: right;
+  height: 40px;
+  padding: 3px;
+  width: 40px;
+  border: 1px solid black;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid black;
+}
+.modal-submit{
+  box-sizing: border-box;
+  border: 2px solid black;
+  height: 40px;
+  width: 150px;
+  font-size: 14px;
+  cursor: pointer;
+}
