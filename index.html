@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wheel of Luck</title>
     <link rel="icon" href="images/wof.png">
-    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Bungee+Shade|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Bungee+Shade|Open+Sans|Raleway|Bungee+Inline" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -19,7 +19,7 @@
 
       <div class="consonant-modal-bg">
         <div class="modal-box">
-          <span class="closer" id="consonant-closer">X</span>
+          <span class="modal-closer" id="consonant-closer">X</span>
           <div class= "letter-guess-container" id="consonant-guess-container">
             <input class="modal-input" id="consonant-input" type="text" name="" value="">
             <button class="modal-submit" id="consonant-submit">Guess Consonant!</button>
@@ -28,7 +28,7 @@
       </div>
       <div class="vowel-modal-bg">
         <div class="modal-box">
-          <span class="closer" id="vowel-closer">X</span>
+          <span class="modal-closer" id="vowel-closer">X</span>
           <div class= "letter-guess-container" id="vowel-guess-container">
             <input class="modal-input" id="vowel-input" type="text" name="" value="">
             <button class="modal-submit" id="vowel-submit">Buy Vowel!</button>
@@ -36,10 +36,10 @@
         </div>
       </div>
       <div class="solve-modal-bg">
-        <div class="modal-box">
-          <span class="closer" id="solve-closer">X</span>
+        <div id="solve-box">
+          <span class="modal-closer" id="solve-closer">X</span>
           <div class= "letter-guess-container" id="solve-guess-container">
-            <input class="modal-input" id="solve-input" type="text" name="" value="">
+            <input id="solve-input" type="text" name="" value="">
             <button class="modal-submit" id="solve-submit">Solve Puzzle!</button>
           </div>
         </div>
@@ -61,7 +61,7 @@
           <form id="name-input-form">
             <input id="name-input" type="text" name="" value="" maxlength="12" placeholder="Enter Name">
           </form>
-          <button class="load-btn" id="contestant-add-btn" type="button" name="button">Add Contestant</button>
+          <button class="add-btn" id="contestant-add-btn" type="button" name="button">Add Contestant</button>
           <button class="load-btn" id="load-game-btn" type="button" name="button">Load Game</button>
           <div id="added-contestants-container">
             <div id="added-contestants"></div>

@@ -1,9 +1,13 @@
-$load-button-color: #3385ff;
-$load-button-hover: #66a3ff;
-$load-button-active: #0066ff;
-$load-button-font: 'Open Sans', sans-serif;
+$btn-color: #FF704D;
+$btn-hover: #ff9980;
+$btn-active: #ff3300;
+$add-color: #7094DB;
+$add-hover: #99b3e6;
+$add-active: #2e5cb8;
+$load-button-font: 'Raleway', sans-serif;
 $shadow: 0 2px 4px rgba(0,0,0,0.2);
 $contestant-font: 'Gochi Hand', cursive;
+
 
 #load-game-container{
   box-sizing: border-box;
@@ -19,33 +23,57 @@ $contestant-font: 'Gochi Hand', cursive;
       font-style: italic;
     }
     #name-input{
-      height: 40px;
+      box-sizing: border-box;
+      height: 60px;
       margin: 5px;
+      padding: 5px;
       width: 200px;
-      font-size: 18px;
-      border-style: none;
-      border-bottom: 1px solid black;
       outline: none;
+      border: none;
+      border-radius: 4px;
       text-align: center;
-    }
-    .load-btn{
-      margin: 5px auto;
-      height: 40px;
-      width: 200px;
-      background-color: $load-button-color;
-      border-style: none;
-      border: 1px solid black;
-      outline: none;
-      color: white;
+      font-size: 20px;
       box-shadow: $shadow;
-      font-size: 18px;
+      font-family: $load-button-font;
+    }
+    .add-btn{
+      box-sizing: border-box;
+      height: 60px;
+      width: 200px;
+      margin: 5px;
+      border-radius: 4px;
+      box-shadow: $shadow;
+      border: none;
       cursor: pointer;
+      color: white;
+      font-size: 20px;
+      background-color: $add-color;
+      font-family: $load-button-font;
       &:hover{
-        background-color: $load-button-hover;
+        background-color: $add-hover;
       }
       &:active{
-        background-color: $load-button-active;
-        color: white;
+        background-color: $add-active;
+      }
+    }
+    .load-btn{
+      box-sizing: border-box;
+      height: 60px;
+      width: 200px;
+      margin: 5px;
+      border-radius: 4px;
+      box-shadow: $shadow;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-size: 20px;
+      background-color: $btn-color;
+      font-family: $load-button-font;
+      &:hover{
+        background-color: $btn-hover;
+      }
+      &:active{
+        background-color: $btn-active;
       }
     }
     #added-contestants-container{

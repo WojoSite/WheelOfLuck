@@ -1,4 +1,4 @@
-$start-button-font: 'Open Sans', sans-serif;
+$start-button-font: 'Raleway', sans-serif;
 $primary-font: 'Roboto', sans-serif;
 $start-button-color: #3385ff;
 $start-button-hover: #66a3ff;
@@ -18,26 +18,29 @@ $start-button-active: #0066ff;
   }
   #start-game-btn{
     box-sizing: border-box;
-    height: 50px;
+    height: 60px;
     width: 200px;
-    margin: auto;
-    border: 1px solid black;
-    background-color: $start-button-color;
-    cursor: pointer;
+    margin: 5px auto;
+    border-radius: 4px;
     box-shadow: $shadow;
-    font-family: $start-button-font;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    background-color: $btn-color;
     text-align: center;
     &:hover{
-      background-color: $start-button-hover;
+      background-color: $btn-hover;
     }
     &:active{
-      background-color: $start-button-active;
+      background-color: $btn-active;
     }
     #start-game-btn-text{
       margin: 0;
-      line-height: 50px;
+      line-height: 60px;
       font-size: 20px;
       color: white;
+      font-family: $start-button-font;
     }
   }
 }

@@ -124,6 +124,8 @@ $(document).ready(function($) {
       $('#solve-submit').on('click', WheelofLuck.puzzleSolve);
       $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
       $('#vowel-submit').on('click', WheelofLuck.buyVowel);
+      $('#current-turn-name').html("Turn: " + WheelofLuck.currentContestant.name);
+      $('#round').html("Round: " + WheelofLuck.roundCounter);
     },
     doTurn: function(){
       WheelofLuck.roundCheck();
@@ -163,7 +165,7 @@ $(document).ready(function($) {
       var nextTurnMsg = "Next player is up."
       var makeGuessMsg = "Choose a letter!"
       WheelofLuck.currentSpinVal = WheelofLuck.wheel[randomNumber];
-      var spinResult = "You spun a " + WheelofLuck.currentSpinVal + "."
+      var spinResult = "You spun a " + WheelofLuck.currentSpinVal;
       $('#spin-word').html(WheelofLuck.currentSpinVal);
       if (WheelofLuck.currentSpinVal == "Lose Turn"){
         WheelofLuck.spinModalFire(loseTurn, nextTurnMsg);

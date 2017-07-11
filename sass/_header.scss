@@ -2,7 +2,7 @@ $logo-font: 'Bungee Shade', cursive;
 $header-button-color: #7094DB;
 $header-button-hover: #99b3e6;
 $header-button-active: #2e5cb8;
-$header-button-font: 'Open Sans', sans-serif;
+$header-button-font: 'Raleway', sans-serif;
 $shadow: 0 2px 4px rgba(0,0,0,0.2);
 $header-bg-color: #4d4d4d;
 
@@ -33,7 +33,7 @@ $header-bg-color: #4d4d4d;
     background-color: $header-button-color;
     color: white;
     font-family: $header-button-font;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     &:hover{
       background-color: $header-button-hover;

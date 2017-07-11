@@ -1,4 +1,11 @@
-$primary-font: 'Open Sans', sans-serif;
+$primary-font: 'Raleway', sans-serif;
+$btn-color: #FF704D;
+$btn-hover: #ff9980;
+$btn-active: #ff3300;
+$shadow: 0 2px 4px rgba(0,0,0,0.2);
+$closer-color: #7094DB;
+$closer-hover: #99b3e6;
+$closer-active: #2e5cb8;
 .spin-modal-bg, .consonant-modal-bg, .vowel-modal-bg, .solve-modal-bg, .msg-modal-bg{
   display: none;
   position: absolute;
@@ -6,54 +13,105 @@ $primary-font: 'Open Sans', sans-serif;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   z-index: 2;
   .modal-box{
     position: relative;
     box-sizing: border-box;
-    top: 100px;
+    top: 75px;
+    border: 3px solid #FF704D;
     height: 150px;
     width: 300px;
     margin: auto;
     padding: 10px;
     background: white;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
-    border: 2px solid black;
+    box-shadow: 4px 4px 100px rgba(0, 0, 0, 0.8);
     border-radius: 4px;
     text-align: center;
+    font-family: $primary-font;
+    #spin-result-text{
+      font-size: 28px;
+      margin: 20px;
+
+    }
+    #spin-result-message{
+      font-size: 20px;
+      margin: 10px;
+    }
+    #message{
+      font-size: 20px;
+      margin: 30px;
+    }
+  }
+  #solve-box{
+    @extend .modal-box;
+    height: 75px;
   }
 }
-.closer{
+.modal-closer{
+  box-sizing: border-box;
   float: right;
-  border: 2px solid black;
-  padding: 0 10px;
+  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 4px;
+  box-shadow: $shadow;
+  color: white;
+  background-color: $closer-color;
   font-family: $primary-font;
+  &:hover{
+    background-color: $closer-hover;
+  }
+  &:active{
+    background-color: $closer-active;
+  }
 }
 .letter-guess-container{
   box-sizing: border-box;
   height: 50px;
   width: 200px;
-  margin: 40px auto;
+  margin: 50px auto;
 }
 .modal-input{
   box-sizing: border-box;
   clear: right;
   height: 40px;
-  padding: 3px;
+  padding: 5px;
   width: 40px;
   border: 1px solid black;
   outline: none;
+  border-radius: 4px;
   text-align: center;
-  font-size: 14px;
-  border: 2px solid black;
+  font-size: 18px;
+  box-shadow: $shadow;
+  font-family: $primary-font;
+}
+#solve-input{
+  @extend .modal-input;
+  margin: 5px;
+  width: 200px;
 }
 .modal-submit{
   box-sizing: border-box;
-  border: 2px solid black;
   height: 40px;
   width: 150px;
-  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: $shadow;
+  border: none;
   cursor: pointer;
+  color: white;
+  font-size: 16px;
+  background-color: $btn-color;
+  font-family: $primary-font;
+  &:hover{
+    background-color: $btn-hover;
+  }
+  &:active{
+    background-color: $btn-active;
+  }
+}
+#solve-submit{
+  @extend .modal-submit;
+  width: 200px;
+  margin: 5px;
 }

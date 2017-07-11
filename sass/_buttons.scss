@@ -1,24 +1,24 @@
-$primary-button-color: #3385ff;
-$primary-button-hover: #ff3333;
-$primary-button-active: #cc0000;
-$shadow: 0 2px 4px rgba(0,0,0,0.2);
-$primary-font: 'Roboto', sans-serif;
-
-.primary-btn{
-  box-sizing: border-box;
-  margin: 15px;
-  height: 30px;
-  width: 100px;
-  float:right;
-  border: 1px solid black;
-  box-shadow: $shadow;
-  background-color: $primary-button-color;
-  color: white;
-  cursor: pointer;
-  &:hover{
-    background-color: $primary-button-hover;
-  }
-  &:active{
-    background-color: $primary-button-active;
-  }
-}
+// $primary-button-color: #3385ff;
+// $primary-button-hover: #ff3333;
+// $primary-button-active: #cc0000;
+// $shadow: 0 2px 4px rgba(0,0,0,0.2);
+// $primary-font: 'Roboto', sans-serif;
+//
+// .primary-btn{
+//   box-sizing: border-box;
+//   margin: 15px;
+//   height: 30px;
+//   width: 100px;
+//   float:right;
+//   border: 1px solid black;
+//   box-shadow: $shadow;
+//   background-color: $primary-button-color;
+//   color: white;
+//   cursor: pointer;
+//   &:hover{
+//     background-color: $primary-button-hover;
+//   }
+//   &:active{
+//     background-color: $primary-button-active;
+//   }
+// }

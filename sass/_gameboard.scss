@@ -1,10 +1,12 @@
-$primary-font: 'Roboto', sans-serif;
+$primary-font: 'Raleway', sans-serif;
+$spin-font: 'Bungee Inline', cursive;
 $btn-color: #FF704D;
 $btn-hover: #ff9980;
 $btn-active: #ff3300;
 $shadow: 0 2px 4px rgba(0,0,0,0.2);
-$letter: #2d862d;
+$letter: #808080;
 $color: white;
+$turn-round-bg: #4d4d4d;
 
 #gameboard-container{
   display: none;
@@ -26,7 +28,7 @@ $color: white;
     // display: flex;
     text-align: center;
     flex-flow: row wrap;
-    height: 115px;
+    height: 110px;
     box-sizing: border-box;
     border-bottom: 1px solid black;
     .phrase-letter-div{
@@ -48,18 +50,24 @@ $color: white;
   }
   #turn-round-display-container{
     width: 100%;
-    hight: 30px;
     #turn-round-display-wrapper{
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-around;
       width: 348px;
-      margin: 5px auto;
+      hight: 30px;
+      padding: 10px 15px;
       color: $color;
       .current-turn{
         float: left;
         box-sizing: border-box;
         display: inline-block;
-        width: 160px;
-        margin: 5px;
+        width: 150px;
+        padding: 3px;
+        border-radius: 4px;
         text-align: center;
+        background-color: $turn-round-bg;
+        box-shadow: $shadow;
         #current-turn-name{
           margin: 0;
         }
@@ -68,9 +76,13 @@ $color: white;
         float: left;
         box-sizing: border-box;
         display: inline-block;
-        width: 160px;
-        margin: 5px;
+        background-color: red;
+        width: 150px;
+        padding: 3px;
+        border-radius: 4px;
         text-align: center;
+        background-color: $turn-round-bg;
+        box-shadow: $shadow;
         #round{
           margin: 0;
         }
@@ -83,11 +95,13 @@ $color: white;
     padding: 0 20px 5px 20px;
     #contestants-container{
       #contestants-table{
+        box-sizing: border-box;
         border-collapse: collapse;
         width: 150px;
         border-radius: 4px;
         color: $color;
-        background-color: black;
+        background-color: #7094DB;
+        box-shadow: $shadow;
         .table-row{
           text-align: center;
           .table-header{
@@ -116,6 +130,8 @@ $color: white;
         border-radius: 50%;
         background-image: url('images/wof.png');
         background-size: cover;
+        box-shadow: $shadow;
+        font-family: $spin-font;
         cursor: pointer;
         color: $color;
         &:hover{
@@ -132,7 +148,7 @@ $color: white;
           text-align: center;
           #spin-word{
             margin: 0;
-            font-size: 16px;
+            font-size: 24px;
             line-height: 135px;
           }
         }
@@ -172,12 +188,11 @@ $color: white;
     }
     .submits{
       box-sizing: border-box;
-      height: 40px;
+      height: 50px;
       border-radius: 4px;
       background-color: $btn-color;
       box-shadow: $shadow;
       cursor: pointer;
-      box
       &:hover{
         background-color: $btn-hover;
       }
@@ -187,7 +202,7 @@ $color: white;
     }
     .submits-text{
       margin: 0;
-      line-height: 38px;
+      line-height: 50px;
       color: $color;
     }
   }
