@@ -293,6 +293,7 @@ $(document).ready(function($) {
             } else {
               WheelofLuck.currentContestant = WheelofLuck.contestantArray[nextContestant];
               $('#current-turn-name').html(WheelofLuck.currentContestant.name);
+
               WheelofLuck.doTurn();
               break
             }
@@ -315,9 +316,12 @@ $(document).ready(function($) {
       var solveGuess = $('#solve-input').val().toUpperCase();
       console.log(solveGuess);
       var msg;
+      var phrase;
       if (solveGuess == WheelofLuck.currentPhrase.toUpperCase()){
         msg = "Correct! You win!";
-        WheelofLuck.msgModalFire(msg);
+        phrase = WheelofLuck.currentPhrase.toUpperCase();
+        WheelofLuck.msgModalFire(msg, phrase);
+        $('.letter').css("color", "white");
       } else {
         msg = "Sorry, that is incorrect. Next player's turn!";
         WheelofLuck.msgModalFire(msg);
@@ -361,8 +365,9 @@ $(document).ready(function($) {
         $('.solve-modal-bg').css("display", "none");
       });
     },
-    msgModalFire: function(x){
+    msgModalFire: function(x,y){
       $('#message').html(x);
+      $('#sub-message').html(y);
       $('.msg-modal-bg').show();
       window.setTimeout(function() {
         $('.msg-modal-bg').hide();

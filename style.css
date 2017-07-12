@@ -375,7 +375,10 @@
       margin: 10px; }
     .spin-modal-bg .modal-box #message, .spin-modal-bg #solve-box #message, .consonant-modal-bg .modal-box #message, .consonant-modal-bg #solve-box #message, .vowel-modal-bg .modal-box #message, .vowel-modal-bg #solve-box #message, .solve-modal-bg .modal-box #message, .solve-modal-bg #solve-box #message, .msg-modal-bg .modal-box #message, .msg-modal-bg #solve-box #message {
       font-size: 20px;
-      margin: 30px; }
+      margin: 20px; }
+    .spin-modal-bg .modal-box #sub-message, .spin-modal-bg #solve-box #sub-message, .consonant-modal-bg .modal-box #sub-message, .consonant-modal-bg #solve-box #sub-message, .vowel-modal-bg .modal-box #sub-message, .vowel-modal-bg #solve-box #sub-message, .solve-modal-bg .modal-box #sub-message, .solve-modal-bg #solve-box #sub-message, .msg-modal-bg .modal-box #sub-message, .msg-modal-bg #solve-box #sub-message {
+      font-size: 16px;
+      margin: 0; }
   .spin-modal-bg #solve-box, .consonant-modal-bg #solve-box, .vowel-modal-bg #solve-box, .solve-modal-bg #solve-box, .msg-modal-bg #solve-box {
     height: 250px; }
 
