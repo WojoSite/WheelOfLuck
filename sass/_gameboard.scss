@@ -30,7 +30,7 @@ $turn-round-bg: #4d4d4d;
     flex-flow: row wrap;
     height: 110px;
     box-sizing: border-box;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $turn-round-bg;
     .phrase-letter-div{
       display: inline-block;
       box-sizing: border-box;
