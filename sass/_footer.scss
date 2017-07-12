@@ -1,6 +1,5 @@
 $primary-font: 'Raleway', sans-serif;
 $color: white;
-$border: 1px solid black;
 $footer-bg-color: #4d4d4d;
 
 #footer{
@@ -8,7 +7,6 @@ $footer-bg-color: #4d4d4d;
   bottom: 0;
   width: 100%;
   height: 40px;
-  border-top: $border;
   background-color: $footer-bg-color;
   #website-container{
     float: left;

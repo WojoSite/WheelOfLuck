@@ -7,6 +7,7 @@
 @import 'footer';
 @import 'modals';
 $gameboard-bg-color: #808080;
+$shadow: 0 2px 4px rgba(0,0,0,0.2);
 body{
   box-sizing: border-box;
   margin: 0;
@@ -16,8 +17,8 @@ body{
     margin: 20px auto;
     width: 350px;
     height: 600px;
-    border: 1px solid black;
     border-radius: 4px;
+    box-shadow: $shadow;
     overflow: hidden;
     background-color: $gameboard-bg-color;
   }

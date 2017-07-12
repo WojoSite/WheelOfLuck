@@ -46,7 +46,7 @@ $closer-active: #2e5cb8;
   }
   #solve-box{
     @extend .modal-box;
-    height: 75px;
+    height: 250px;
   }
 }
 .modal-closer{
@@ -100,7 +100,7 @@ $closer-active: #2e5cb8;
   border: none;
   cursor: pointer;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   background-color: $btn-color;
   font-family: $primary-font;
   &:hover{
@@ -113,5 +113,4 @@ $closer-active: #2e5cb8;
 #solve-submit{
   @extend .modal-submit;
   width: 200px;
-  margin: 5px;
 }

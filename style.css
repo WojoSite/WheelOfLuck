@@ -1,7 +1,6 @@
 #header {
   box-sizing: border-box;
   height: 50px;
-  border-bottom: 1px solid black;
   background-color: #4d4d4d; }
   #header #logo {
     float: left; }
@@ -330,7 +329,6 @@
   bottom: 0;
   width: 100%;
   height: 40px;
-  border-top: 1px solid black;
   background-color: #4d4d4d; }
   #footer #website-container {
     float: left; }
@@ -380,7 +378,7 @@
       font-size: 20px;
       margin: 30px; }
   .spin-modal-bg #solve-box, .consonant-modal-bg #solve-box, .vowel-modal-bg #solve-box, .solve-modal-bg #solve-box, .msg-modal-bg #solve-box {
-    height: 75px; }
+    height: 250px; }
 
 .modal-closer {
   box-sizing: border-box;
@@ -430,7 +428,7 @@
   border: none;
   cursor: pointer;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #FF704D;
   font-family: "Raleway", sans-serif; }
   .modal-submit:hover, #solve-submit:hover {
@@ -439,8 +437,7 @@
     background-color: #ff3300; }
 
 #solve-submit {
-  width: 200px;
-  margin: 5px; }
+  width: 200px; }
 
 body {
   box-sizing: border-box;
@@ -451,8 +448,8 @@ body {
     margin: 20px auto;
     width: 350px;
     height: 600px;
-    border: 1px solid black;
     border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     background-color: #808080; }
 
