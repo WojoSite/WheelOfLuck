@@ -71,7 +71,8 @@ $(document).ready(function($) {
       for (var i = 0; i < WheelofLuck.contestantArray.length; i++) {
         var contestantTable = document.getElementById('contestants-table');
         var tableRow = document.createElement("tr");
-        tableRow.className = "table-row";
+        tableRow.className = "turn-off";
+        tableRow.setAttribute("id", WheelofLuck.contestantArray[i].name+i);
         var contestantTd = document.createElement("td");
         contestantTd.className = "contestant-name";
         contestantTd.innerHTML = WheelofLuck.contestantArray[i].name;
@@ -121,13 +122,9 @@ $(document).ready(function($) {
       WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
       WheelofLuck.roundCounter++;
       $('#spin-btn').on('click', WheelofLuck.spinWheel);
-
-      // ======================== MOVEME =====
       $('#solve-submit').on('click', WheelofLuck.puzzleSolve);
       $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
       $('#vowel-submit').on('click', WheelofLuck.buyVowel);
-
-
       $('#current-turn-name').html("Turn: " + WheelofLuck.currentContestant.name);
       $('#round').html("Round: " + WheelofLuck.roundCounter);
     },
@@ -360,18 +357,21 @@ $(document).ready(function($) {
       }, 1500);
     },
     consonantModalFire: function(){
+      $('#consonant-input').val("");
       $('.consonant-modal-bg').show();
       $('#consonant-closer').on('click',function(){
         $('.consonant-modal-bg').css("display", "none");
       });
     },
     vowelModalFire: function(){
+      $('#vowel-input').val("");
       $('.vowel-modal-bg').show();
       $('#vowel-closer').on('click',function(){
         $('.vowel-modal-bg').css("display", "none");
       });
     },
     solveModalFire: function(){
+      $('#solve-input').val("");
       $('.solve-modal-bg').show();
       $('#solve-closer').on('click',function(){
         $('.solve-modal-bg').css("display", "none");

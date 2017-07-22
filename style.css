@@ -220,17 +220,19 @@
       color: white;
       background-color: #7094DB;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
-      #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row {
+      #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-off {
         text-align: center; }
-        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row .table-header {
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-off .table-header {
           border-collapse: collapse;
           padding: 7px; }
-        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row .contestant-name {
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-off .contestant-name {
           border-collapse: collapse;
           padding: 7px; }
-        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .table-row .pts {
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-off .pts {
           border-collapse: collapse;
           padding: 7px; }
+      #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-on {
+        background-color: #FF704D; }
     #gameboard-container #contestants-spin-container #spin-container {
       display: inline-block;
       padding: 0 5px; }

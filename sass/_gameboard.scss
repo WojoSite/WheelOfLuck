@@ -102,7 +102,7 @@ $turn-round-bg: #4d4d4d;
         color: $color;
         background-color: #7094DB;
         box-shadow: $shadow;
-        .table-row{
+        .turn-off{
           text-align: center;
           .table-header{
             border-collapse: collapse;
@@ -116,6 +116,9 @@ $turn-round-bg: #4d4d4d;
             border-collapse: collapse;
             padding: 7px;
           }
+        }
+        .turn-on{
+          background-color: #FF704D;
         }
       }
     }
