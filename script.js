@@ -325,8 +325,12 @@ $(document).ready(function($) {
       if (solveGuess == WheelofLuck.currentPhrase.toUpperCase()){
         msg = "Correct! You win!";
         phrase = WheelofLuck.currentPhrase.toUpperCase();
-        WheelofLuck.msgModalFire(msg, phrase);
+        var ltr = $('.letter');
+        console.log(ltr);
         $('.letter').css("color", "white");
+
+
+        WheelofLuck.msgModalFire(msg, phrase);
       } else {
         msg = "Sorry, that is incorrect. Next player's turn!";
         WheelofLuck.msgModalFire(msg);
