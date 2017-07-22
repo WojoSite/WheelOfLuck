@@ -166,7 +166,7 @@ $(document).ready(function($) {
       var nextTurnMsg = "Next player is up."
       var makeGuessMsg = "Choose a letter!"
       WheelofLuck.currentSpinVal = WheelofLuck.wheel[randomNumber];
-      var spinResult = "You spun a " + WheelofLuck.currentSpinVal;
+      var spinResult = WheelofLuck.currentContestant.name + " spun a " + WheelofLuck.currentSpinVal;
       $('#spin-word').html(WheelofLuck.currentSpinVal);
       if (WheelofLuck.currentSpinVal == "Lose Turn"){
         WheelofLuck.spinModalFire(loseTurn, nextTurnMsg);
