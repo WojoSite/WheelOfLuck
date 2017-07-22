@@ -121,9 +121,13 @@ $(document).ready(function($) {
       WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
       WheelofLuck.roundCounter++;
       $('#spin-btn').on('click', WheelofLuck.spinWheel);
+
+      // ======================== MOVEME =====
       $('#solve-submit').on('click', WheelofLuck.puzzleSolve);
       $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
       $('#vowel-submit').on('click', WheelofLuck.buyVowel);
+
+
       $('#current-turn-name').html("Turn: " + WheelofLuck.currentContestant.name);
       $('#round').html("Round: " + WheelofLuck.roundCounter);
     },
@@ -179,6 +183,7 @@ $(document).ready(function($) {
             $(ptSelector).html(WheelofLuck.contestantArray[i].points);
           }
         }
+        $('#spin-btn').off('click');
         WheelofLuck.nextContestant();
       } else {
         WheelofLuck.spinModalFire(spinResult, makeGuessMsg);
@@ -334,6 +339,9 @@ $(document).ready(function($) {
         $('#vowel-input').val(null);
         $('#consonant-input').val(null);
         $('#spin-word').html("Spin!");
+        $('#guess-consonant').off('click');
+        $('#guess-vowel').off('click');
+        $('#solve-puzzle').off('click');
         WheelofLuck.multiplier = [];
         WheelofLuck.currentSpinVal = null;
         WheelofLuck.currentGuess = null;

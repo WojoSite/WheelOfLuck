@@ -236,8 +236,8 @@
       padding: 0 5px; }
       #gameboard-container #contestants-spin-container #spin-container #spin-btn {
         box-sizing: border-box;
-        height: 135px;
-        width: 135px;
+        height: 140px;
+        width: 140px;
         background-color: #FF704D;
         border-radius: 50%;
         background-image: url("images/wof.png");
@@ -337,7 +337,7 @@
       margin: 10px;
       text-decoration: none;
       color: white;
-      font-family: "Bungee Shade", cursive;
+      font-family: "Raleway", sans-serif;
       font-size: 14px; }
   #footer #github-icon {
     float: right;
