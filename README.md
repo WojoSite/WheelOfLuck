@@ -15,5 +15,4 @@
   <li>Improve styling on the modals.</li>
   <li>If another spin is attempted without attempting a vowel guess or a puzzle solve, then alert the user that they must guess/solve before spinning again.</li>
   <li>Refactor code (it's too verbose right now).</li>
-  <li>Add more phrases.</li>
 </ul>
