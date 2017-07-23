@@ -1,10 +1,11 @@
-$logo-font: 'Bungee Shade', cursive;
+$logo-font:'Monoton', cursive;
 $header-button-color: #7094DB;
 $header-button-hover: #99b3e6;
 $header-button-active: #2e5cb8;
 $header-button-font: 'Raleway', sans-serif;
 $shadow: 0 2px 4px rgba(0,0,0,0.2);
 $header-bg-color: #4d4d4d;
+$logo-color: #FF704D;
 
 #header{
   box-sizing: border-box;
@@ -16,15 +17,15 @@ $header-bg-color: #4d4d4d;
   #logo-text{
     margin: 0 0 0 10px;
     line-height: 50px;
-    font-size: 22px;
+    font-size: 28px;
     font-family: $logo-font;
-    color: white;
+    color: $logo-color;
   }
   #new-game-btn{
     box-sizing: border-box;
     margin: 10px;
     height: 30px;
-    width: 90px;
+    width: 80px;
     float:right;
     border-radius: 2px;
     border: none;

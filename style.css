@@ -7,14 +7,14 @@
   #header #logo-text {
     margin: 0 0 0 10px;
     line-height: 50px;
-    font-size: 22px;
-    font-family: "Bungee Shade", cursive;
-    color: white; }
+    font-size: 28px;
+    font-family: "Monoton", cursive;
+    color: #FF704D; }
   #header #new-game-btn {
     box-sizing: border-box;
     margin: 10px;
     height: 30px;
-    width: 90px;
+    width: 80px;
     float: right;
     border-radius: 2px;
     border: none;

@@ -1,9 +1,17 @@
 <h1>Wheel of Luck</h1>
-<p>Welcome to the Wheel of Luck game. This game is based off the popular television gameshow Wheel of Fortune. It was created as part of a Web Development Intensive course through NYCDA.</p>
+<p>Try your luck with this <em>Wheel of Luck</em>! This is a simple hangman-style phrase guessing game based off the popular television gameshow <a href="http://www.wheeloffortune.com/" target="_blank"><em>Wheel of Fortune</em></a>. This web application was created as part of a New York Code & Design Academy (NYCDA) Web Development Intensive course project.</p>
+<h2>Languages and Technologies Used:</h2>
+<ul>
+  <li>HTML</li>
+  <li>CSS3/Sass</li>
+  <li>JavaScript/JQuery/OOP</li>
+  <li>Google Font API</li>
+</ul>
 <h2>Additional Functionality Desired:</h2>
 <ul>
-  <li>Responsive design</li>
-  <li>Phrase shows on successful solve</li>
-  <li>Disable right-side submit buttons until spin fires</li>
-
+  <li>Upon a new contestant, change the background color current contestant's row</li>
+  <li>Upon the game ending, replace the phrase hint with "Current Winner: [NAME]"</li>
+  <li>Create a custom wheel</li>
+  <li>Improve styling on the modals</li>
+  <li>If another spin is attempted without attempting a vowel guess or a puzzle solve, then alert the user that they must guess/solve before spinning again.</li>
 </ul>
