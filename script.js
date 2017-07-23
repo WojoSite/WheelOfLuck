@@ -183,6 +183,9 @@ $(document).ready(function($) {
         $('#spin-btn').off('click');
         WheelofLuck.nextContestant();
       } else {
+        $('#guess-consonant').off('click');
+        $('#guess-vowel').off('click');
+        $('#solve-puzzle').off('click');
         WheelofLuck.spinModalFire(spinResult, makeGuessMsg);
         $('#guess-consonant').on('click', WheelofLuck.consonantModalFire);
         $('#guess-vowel').on('click', WheelofLuck.vowelModalFire);
@@ -274,7 +277,7 @@ $(document).ready(function($) {
     },
     handleFail: function(){
       var msg;
-      console.log("Handle Fail fired");
+      console.log("Handle Fail fired :(");
       msg = "Sorry, there are no " + WheelofLuck.currentGuess + "'s";
       WheelofLuck.msgModalFire(msg);
       WheelofLuck.handleGuessedLetter();
@@ -343,6 +346,12 @@ $(document).ready(function($) {
         $('#guess-consonant').off('click');
         $('#guess-vowel').off('click');
         $('#solve-puzzle').off('click');
+        $('#guess-consonant').on('click', console.log("guess-consonant clicked"));
+        var msg = "Spin!"
+        $('#guess-consonant').on('click', function(){
+          WheelofLuck.msgModalFire(msg);
+        });
+
         WheelofLuck.multiplier = [];
         WheelofLuck.currentSpinVal = null;
         WheelofLuck.currentGuess = null;
