@@ -7,12 +7,5 @@
   <li>JavaScript/JQuery/OOP</li>
   <li>Google Font API</li>
 </ul>
-<h2>Additional Functionality Desired:</h2>
-<ul>
-  <li>Upon a new contestant, change the background color of the current contestant's row.</li>
-  <li>Upon the game ending, replace the phrase hint with "Current Winner: [NAME]".</li>
-  <li>Create a custom wheel.</li>
-  <li>Improve styling on the modals.</li>
-  <li>If another spin is attempted without attempting a vowel guess or a puzzle solve, then alert the user that they must guess/solve before spinning again.</li>
-  <li>Refactor code (it's too verbose right now).</li>
-</ul>
+<h2>Additional Improvements/Functionality Desired:</h2>
+<p>See "Issues" tab.</p>
