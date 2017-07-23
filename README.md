@@ -1,5 +1,5 @@
 <h1>Wheel of Luck</h1>
-<p>Try your luck with this <em>Wheel of Luck</em>, a simple hangman-style phrase guessing game based off the popular television gameshow <a href="http://www.wheeloffortune.com/" target="_blank"><em>Wheel of Fortune</em></a>. This web application was created as part of a New York Code & Design Academy (<a href="https://nycda.com/" target="_blank">NYCDA</a>) Web Development Intensive course project.</p>
+<p>Try your luck with <em>Wheel of Luck</em>, a simple hangman-style phrase guessing game based off the popular television gameshow <a href="http://www.wheeloffortune.com/" target="_blank"><em>Wheel of Fortune</em></a>. I created this web application as part of a New York Code & Design Academy (<a href="https://nycda.com/" target="_blank">NYCDA</a>) Web Development Intensive course project.</p>
 <h2>Languages and Technologies Used:</h2>
 <ul>
   <li>HTML</li>
@@ -9,7 +9,7 @@
 </ul>
 <h2>Additional Functionality Desired:</h2>
 <ul>
-  <li>Upon a new contestant, change the background color current contestant's row</li>.
+  <li>Upon a new contestant,   change the background color current contestant's row</li>.
   <li>Upon the game ending, replace the phrase hint with "Current Winner: [NAME]".</li>
   <li>Create a custom wheel.</li>
   <li>Improve styling on the modals.</li>
