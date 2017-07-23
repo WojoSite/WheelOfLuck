@@ -5,6 +5,13 @@ $(document).ready(function($) {
     phraseArray: [
       {phrase: "SEVENTH INNING STRETCH", hint: "Baseball Break"},
       {phrase: "SECRETARY OF STATE", hint: "Fourth in Line"},
+      {phrase: "BLESSING IN DISGUISE", hint: "A Hidden Advantage"},
+      {phrase: "D", hint: "An Expected Occurance"},
+      {phrase: "GREASED LIGHTNING", hint: "Very fast or quick"},
+      {phrase: "WHOLE NINE YARDS", hint: "Everything, All of It"},
+      {phrase: "SMELL SOMETHING FISHY", hint: "Detecting Something Wrong"},
+      {phrase: "BACK SEAT DRIVER", hint: "Criticise from the sidelines"},
+      {phrase: "ARM CHAIR GENERAL", hint: "Expert without Experience"},
       {phrase: "WEINER SCHNITZEL", hint: "A Little Vienna Cut"}
     ],
     currentPhrase: null,
@@ -84,7 +91,7 @@ $(document).ready(function($) {
         tableRow.appendChild(contestantPts);
         contestantTable.appendChild(tableRow);
       }
-      var randomNumber = Math.floor((Math.random() * 3));
+      var randomNumber = Math.floor((Math.random() * 10));
       $('#phrase-hint').html("Hint: "+WheelofLuck.phraseArray[randomNumber].hint);
       WheelofLuck.currentPhrase = WheelofLuck.phraseArray[randomNumber].phrase;
       console.log(WheelofLuck.currentPhrase);
