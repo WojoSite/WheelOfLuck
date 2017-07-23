@@ -9,7 +9,7 @@
 </ul>
 <h2>Additional Functionality Desired:</h2>
 <ul>
-  <li>Upon a new contestant,   change the background color current contestant's row.</li>
+  <li>Upon a new contestant, change the background color of the current contestant's row.</li>
   <li>Upon the game ending, replace the phrase hint with "Current Winner: [NAME]".</li>
   <li>Create a custom wheel.</li>
   <li>Improve styling on the modals.</li>
