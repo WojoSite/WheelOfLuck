@@ -125,7 +125,7 @@ $(document).ready(function($) {
       $('#solve-submit').on('click', WheelofLuck.puzzleSolve);
       $('#consonant-submit').on('click', WheelofLuck.consonantEntry);
       $('#vowel-submit').on('click', WheelofLuck.buyVowel);
-      $('#current-turn-name').html("Turn: " + WheelofLuck.currentContestant.name);
+      $('#current-turn-name').html(WheelofLuck.currentContestant.name);
       $('#round').html("Round: " + WheelofLuck.roundCounter);
     },
     doTurn: function(){
@@ -160,6 +160,8 @@ $(document).ready(function($) {
     spinWheel: function(){
       $('#spin-btn').css('animation', 'spin 2s');
       console.log("Spin wheel fired!");
+      $('#spin-btn').off('click');
+      console.log("Spin button is off");
       var randomNumber = Math.floor((Math.random() * 18));
       var loseTurn = "Lose Turn!"
       var bankrupt = "Bankrupt!"
@@ -180,7 +182,6 @@ $(document).ready(function($) {
             $(ptSelector).html(WheelofLuck.contestantArray[i].points);
           }
         }
-        $('#spin-btn').off('click');
         WheelofLuck.nextContestant();
       } else {
         $('#guess-consonant').off('click');
@@ -190,7 +191,6 @@ $(document).ready(function($) {
         $('#guess-consonant').on('click', WheelofLuck.consonantModalFire);
         $('#guess-vowel').on('click', WheelofLuck.vowelModalFire);
         $('#solve-puzzle').on('click', WheelofLuck.solveModalFire);
-        $('#spin-btn').off('click');
       }
     },
     buyVowel: function(){
@@ -328,8 +328,6 @@ $(document).ready(function($) {
         var ltr = $('.letter');
         console.log(ltr);
         $('.letter').css("color", "white");
-
-
         WheelofLuck.msgModalFire(msg, phrase);
       } else {
         msg = "Sorry, that is incorrect. Next player's turn!";
@@ -346,12 +344,16 @@ $(document).ready(function($) {
         $('#guess-consonant').off('click');
         $('#guess-vowel').off('click');
         $('#solve-puzzle').off('click');
-        $('#guess-consonant').on('click', console.log("guess-consonant clicked"));
         var msg = "Spin!"
         $('#guess-consonant').on('click', function(){
           WheelofLuck.msgModalFire(msg);
         });
-
+        $('#guess-vowel').on('click', function(){
+          WheelofLuck.msgModalFire(msg);
+        });
+        $('#solve-puzzle').on('click', function(){
+          WheelofLuck.msgModalFire(msg);
+        });
         WheelofLuck.multiplier = [];
         WheelofLuck.currentSpinVal = null;
         WheelofLuck.currentGuess = null;

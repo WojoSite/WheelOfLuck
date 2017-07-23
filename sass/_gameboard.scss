@@ -68,8 +68,13 @@ $turn-round-bg: #4d4d4d;
         text-align: center;
         background-color: $turn-round-bg;
         box-shadow: $shadow;
+        #current-turn-pre-name{
+          margin: 0;
+        }
         #current-turn-name{
           margin: 0;
+          color: $btn-color;
+          font-weight: bold;
         }
       }
       .round-item{
