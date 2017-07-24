@@ -236,7 +236,17 @@
           border-collapse: collapse;
           padding: 7px; }
       #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-on {
-        background-color: #FF704D; }
+        background-color: #FF704D;
+        text-align: center; }
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-on .table-header {
+          border-collapse: collapse;
+          padding: 7px; }
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-on .contestant-name {
+          border-collapse: collapse;
+          padding: 7px; }
+        #gameboard-container #contestants-spin-container #contestants-container #contestants-table .turn-on .pts {
+          border-collapse: collapse;
+          padding: 7px; }
     #gameboard-container #contestants-spin-container #spin-container {
       display: inline-block;
       padding: 0 5px; }

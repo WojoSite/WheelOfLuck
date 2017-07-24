@@ -124,6 +124,19 @@ $turn-round-bg: #4d4d4d;
         }
         .turn-on{
           background-color: #FF704D;
+          text-align: center;
+          .table-header{
+            border-collapse: collapse;
+            padding: 7px;
+          }
+          .contestant-name{
+            border-collapse: collapse;
+            padding: 7px;
+          }
+          .pts{
+            border-collapse: collapse;
+            padding: 7px;
+          }
         }
       }
     }

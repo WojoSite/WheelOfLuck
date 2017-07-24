@@ -6,7 +6,7 @@ $(document).ready(function($) {
       {phrase: "SEVENTH INNING STRETCH", hint: "Baseball Break"},
       {phrase: "SECRETARY OF STATE", hint: "Fourth in Line"},
       {phrase: "BLESSING IN DISGUISE", hint: "A Hidden Advantage"},
-      {phrase: "D", hint: "An Expected Occurance"},
+      {phrase: "WILLIAM HOWARD TAFT", hint: "President AND Chief Justice"},
       {phrase: "GREASED LIGHTNING", hint: "Very fast or quick"},
       {phrase: "WHOLE NINE YARDS", hint: "Everything, All of It"},
       {phrase: "SMELL SOMETHING FISHY", hint: "Detecting Something Wrong"},
@@ -79,7 +79,7 @@ $(document).ready(function($) {
         var contestantTable = document.getElementById('contestants-table');
         var tableRow = document.createElement("tr");
         tableRow.className = "turn-off";
-        tableRow.setAttribute("id", WheelofLuck.contestantArray[i].name+i);
+        tableRow.setAttribute('id', WheelofLuck.contestantArray[i].id);
         var contestantTd = document.createElement("td");
         contestantTd.className = "contestant-name";
         contestantTd.innerHTML = WheelofLuck.contestantArray[i].name;
@@ -134,13 +134,14 @@ $(document).ready(function($) {
       $('#vowel-submit').on('click', WheelofLuck.buyVowel);
       $('#current-turn-name').html(WheelofLuck.currentContestant.name);
       $('#round').html("Round: " + WheelofLuck.roundCounter);
+      WheelofLuck.contestantBgColor();
     },
     doTurn: function(){
       WheelofLuck.roundCheck();
       console.log("Do Turn Fired!");
       WheelofLuck.clearBoth();
       $('#spin-btn').on('click', WheelofLuck.spinWheel);
-      $('#current-turn-name').html("Turn: " + WheelofLuck.currentContestant.name);
+      $('#current-turn-name').html(WheelofLuck.currentContestant.name);
       $('#round').html("Round: " + WheelofLuck.roundCounter);
     },
     roundCheck: function(){
@@ -221,7 +222,6 @@ $(document).ready(function($) {
           }
         }
         WheelofLuck.guessedLetters.push(WheelofLuck.currentGuess);
-        console.log(WheelofLuck.guessedLetters);
         WheelofLuck.checkGuess();
       }
       $('.vowel-modal-bg').css("display", "none");
@@ -299,13 +299,14 @@ $(document).ready(function($) {
             if (nextContestant >= WheelofLuck.contestantArray.length){
               WheelofLuck.currentContestant = WheelofLuck.contestantArray[0];
               $('#current-turn-name').html(WheelofLuck.currentContestant.name);
+              WheelofLuck.contestantBgColor();
               WheelofLuck.roundCounter++;
               WheelofLuck.doTurn();
               break
             } else {
               WheelofLuck.currentContestant = WheelofLuck.contestantArray[nextContestant];
               $('#current-turn-name').html(WheelofLuck.currentContestant.name);
-
+              WheelofLuck.contestantBgColor();
               WheelofLuck.doTurn();
               break
             }
@@ -326,14 +327,12 @@ $(document).ready(function($) {
     },
     puzzleSolve: function(){
       var solveGuess = $('#solve-input').val().toUpperCase();
-      console.log(solveGuess);
       var msg;
       var phrase;
       if (solveGuess == WheelofLuck.currentPhrase.toUpperCase()){
         msg = "Correct! You win!";
         phrase = WheelofLuck.currentPhrase.toUpperCase();
         var ltr = $('.letter');
-        console.log(ltr);
         $('.letter').css("color", "white");
         WheelofLuck.msgModalFire(msg, phrase);
       } else {
@@ -402,6 +401,11 @@ $(document).ready(function($) {
       window.setTimeout(function() {
         $('.msg-modal-bg').hide();
       }, 1500);
+    },
+    contestantBgColor: function(){
+      var contestant = "#" + WheelofLuck.currentContestant.id;
+      $('tr').removeClass("turn-on").addClass("turn-off");
+      $(contestant).removeClass("turn-off").addClass("turn-on");
     }
   }
   WheelofLuck.init();
